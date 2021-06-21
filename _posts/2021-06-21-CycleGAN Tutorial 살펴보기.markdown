@@ -18,7 +18,7 @@ categories: DeepLearning GAN Tutorial
 
 ![image](https://user-images.githubusercontent.com/43837843/122640665-b8e19800-d13b-11eb-930e-7751ea2ac402.png)
 
-Generative Model 을 공부하다가, CycleGAN을 이용한 흥미로운 repository 가 많음을 할게 되어 CycleGAN에 대해 공부해보게 되었습니다. GAN에서는 Generator와 Discriminator 를 이용해 '진짜같은' 데이터를 생성하는 것을 목적으로 합니다. Generator는 real data의 어떠한 분포를 학습해 더욱 진짜같은 데이터를 만들고, Discriminator는 이 이미지가 Generator로부터 생성된 것인지, 실제 데이터 분포에서 온 것인지를 구별하는 것이 목적입니다. 
+Generative Model 을 공부하다가, CycleGAN을 이용한 흥미로운 repository 가 많음을 알게 되어 CycleGAN에 대해 공부해보게 되었습니다. GAN에서는 Generator와 Discriminator 를 이용해 '진짜같은' 데이터를 생성하는 것을 목적으로 합니다. Generator는 real data의 어떠한 분포를 학습해 더욱 진짜같은 데이터를 만들고, Discriminator는 이 이미지가 Generator로부터 생성된 것인지, 실제 데이터 분포에서 온 것인지를 구별하는 것이 목적입니다. 
 
 **반면, CycleGAN 은 데이터를 한 도메인에서, 다른 도메인으로 'translate'하는 것을 목적으로 합니다.** 예를들어 영어를 불어로 'translate' 하는 것 처럼, 말 사진이 주어졌을 때 이미지속의 말을 얼룩말로 변형하는 것처럼 말이죠. Generation 이 된 G(x)는, X 도메인에서 Y 도메인으로 translate 된 데이터의 estimator가 됩니다. 즉 $G : X \rightarrow Y$ 이고, $\hat y = G(x)$ 가 됩니다.
 
