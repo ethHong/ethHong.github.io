@@ -13,7 +13,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: "Sukhyun Ethan Hong"
-  tagline: "Deep Learning"
+  tagline: "Deep Learning 공부의 기록"
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
