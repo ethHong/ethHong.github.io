@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[KR]Overview-Zero shot and Multimodality"
+title:  "[KR]Overview: About Zero shot and Multimodality"
   - Blog
   - MathJax
   - Jekyll
