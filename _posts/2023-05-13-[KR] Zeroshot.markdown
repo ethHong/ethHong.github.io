@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "[KR] Overview on Zero shot Learning and Multimodality"
-
   - Blog
   - MathJax
   - Jekyll
