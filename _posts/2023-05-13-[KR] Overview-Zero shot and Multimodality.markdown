@@ -6,7 +6,8 @@ title:  "[KR]Overview-Zero shot and Multimodality"
   - Jekyll
   - LaTeX
 use_math: true
-date:   2023.05.13
+date:   2023-05-13
+last_modified_at:  2023-05-13
 categories: DeepLearning GenerativeAI ZeroShotLearning Multimodality
 ---
 
