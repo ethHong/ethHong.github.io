@@ -1,4 +1,4 @@
-title: 
+title:
 author: Sukhyun Ethan Hong
 email: sukhyun9673@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "show_exerpts:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 show_excerpts: true # set to true to show excerpts on the homepage
-
+future: true
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
@@ -26,8 +26,8 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    github:  "ethHong"
-    linkedIn: "in/hong-sukhyun-431934136/"
+    github: "ethHong"
+    linkedIn: "https://www.linkedin.com/in/seokhyun-hong-1a5121223/"
     #dribbble: jekyll
     #flickr:   jekyll
     #instagram: jekyll
@@ -57,7 +57,6 @@ plainwhite:
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
-
 
 markdown: kramdown
 highlighter: rouge
