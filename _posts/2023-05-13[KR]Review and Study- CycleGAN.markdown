@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Cycle-GAN 훑어보기 및 튜토리얼"
+title:  "Review - CycleGAN"
 tags:
   - Blog
   - MathJax
   - Jekyll
   - LaTeX
 use_math: true
-date:   2021-06-21
+date:   2023-05-13
 categories: DeepLearning GAN Tutorial
 ---
 

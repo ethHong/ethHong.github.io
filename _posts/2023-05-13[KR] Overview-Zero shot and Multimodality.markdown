@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Multimofal AI 를 알아보자: Zero-shot text to image (DALL-E)"
+title:  "[KR]Overview-Zero shot and Multimodality"
   - Blog
   - MathJax
   - Jekyll
   - LaTeX
 use_math: true
-date:   2023.05.02
-categories: DeepLearning DallE Generative AI
+date:   2023.05.13
+categories: DeepLearning GenerativeAI ZeroShotLearning Multimodality
 ---
 
 # Dall-E, GPT... 기존 접근과 뭐가 다를까?
