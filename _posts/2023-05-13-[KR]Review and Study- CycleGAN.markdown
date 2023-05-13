@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[KR]Review of style transfer model - CycleGAN"
+title:  "[KR] Review of style transfer model - CycleGAN"
 tags:
   - Blog
   - MathJax
