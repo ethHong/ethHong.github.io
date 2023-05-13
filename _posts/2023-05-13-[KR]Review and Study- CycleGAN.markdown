@@ -10,6 +10,7 @@ use_math: true
 date:   2023-05-13
 last_modified_at:  2023-05-13
 categories: DeepLearning GAN Tutorial
+published: true
 ---
 
 
