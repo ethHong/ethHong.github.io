@@ -1,15 +1,16 @@
 ---
 layout: post
 title:  "[KR] Overview - About Zero shot Learning and Multimodality"
+
   - Blog
   - MathJax
   - Jekyll
   - LaTeX
-use_math: true
-date:   2023-05-13
-last_modified_at:  2023-05-13
-categories: DeepLearning ZeroShotLearning Multimodality
-published: true
+    use_math: true
+    date:   2023-05-13
+    last_modified_at:  2023-05-13
+    categories: DeepLearning ZeroShotLearning Multimodality
+    published: true
 ---
 
 # Dall-E, GPT... 기존 접근과 뭐가 다를까?
