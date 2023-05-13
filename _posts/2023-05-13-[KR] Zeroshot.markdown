@@ -27,4 +27,3 @@ GPT는 확실히 사람처럼 말을 하고, 정말 다양한 답변을 생성�
 $f_{model} : \mathcal{x} \rightarrow \mathcal{y}$ 와 같이, 이미지 데이터의 도메인 $\mathcal{x} 로부터, Label의 도메인 \mathcal{y}$ 에서 추론값을 얻어내는 일종의 함수와 같은 역할을 하게 됩니다. 
 
 # Zero - shot learning: 학습하지 않은 데이터에 대한 결과물을 추론하기
-
