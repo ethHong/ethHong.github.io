@@ -10,12 +10,12 @@ use_math: true
 date:   2023-05-13
 last_modified_at:  2023-05-13
 categories: 누구나가볍게읽기 DeepLearning ZeroShotLearning Multimodality
-published: true
+published: false
 ---
 
 *본 게시글은, [A Review of Generalized Zero-Shot Learning Methods](https://arxiv.org/abs/2011.08641) 논문의 전반부 내용을 바탕으로 공부한 내용을 함께 다룹니다. 
 
-# Dall-E, GPT 등... 기존 신경망 접근과 뭐가 다를까?
+# What is Zero shot learning, and why it's awsome?
 
 Generative AI, LLM, 빅 모델 등... Open AI 가 뛰어난 성능의 오픈소스 API 를 공개하면서 AI 가 다시한번 변곡점을 맞은 것 처럼 보입니다. 확실히 Google Trend만 보아도, ChatGPT 키워드가 부상하며 AI 키워드 역시 이전 대비 급격하게 관심도가 증가한것을 볼 수 있습니다. AI, 그리고 딥러닝에 대한 연구는 계속 다양한 분야에서 꾸준히 진행되어왔지만, End User 에게 그 발전의 속도와 정도가 피부에 와 닿게 만들어준것은 확실히 OpenAI 의 영향이 있는 것 같습니다. 
 
@@ -23,7 +23,7 @@ Generative AI, LLM, 빅 모델 등... Open AI 가 뛰어난 성능의 오픈소�
 
 GPT는 확실히 사람처럼 말을 하고, 정말 다양한 답변을 생성해냅니다. 단순히 물음에 대답할 뿐 아니라, 정보를 주었을 때 이를 효율적으로 '사람처럼' 처리하는 일에도 뛰어난 성능을 보이고 있습니다. 예를 들어, [Large Language Models are Zero-Shot Reasoners](https://arxiv.org/pdf/2205.11916.pdf) 라는 논문에서는 GPT 와 같은 'Large Language Model' 을 통해, 수학문제를 풀도록 합니다. Dall-E는 주어진 텍스트에 알맞은 이미지를 생성해냅니다. 확실히 예전에 비해 AI, 그리고 딥러닝의 방향성과 처리할 수 있는 작업의 범위가 넓어졌음을 알 수 있습니다. 최근의 Generative AI 트렌드를 주도하는 Dall-E나, GPT 같은 Large Model 들의 핵심에는 'semantic representation'을 학습하는 방향의 최신 연구 트렌드가 있습니다. 
 
-그래서 이런 최신 Generative AI 모델들을 공부하기 앞서, **Zero-shot (또는 Few shot), 또는 Multimodality** 와 같은 트렌드에 대해 짚고 넘어가보려 합니다. 이번 포스트에서는 우선 Zero shot, 그리고 Multimodality가 무엇인지, 기존 딥러닝 접근법과 이런 접근이 무엇지 다른지를 간략하게 정리해보겠습니다. 
+그래서 이런 최신 Generative AI 모델들을 공부하기 앞서, **Zero-shot (또는 Few shot), 또는 Multimodality** 와 같은 트렌드에 대해 짚고 넘어가보려 합니다. 이번 포스트에서는 우선 Zero shot이 무엇인지, 기존 딥러닝 접근법과 이런 접근이 무엇지 다른지를 간략하게 정리해보겠습니다. 
 
 # Traditional Deep Learning
 
@@ -43,7 +43,9 @@ GPT는 확실히 사람처럼 말을 하고, 정말 다양한 답변을 생성�
 
 신경망의 등장은 더 고차원적인 데이터를 처리할 수 있도록 딥러닝 모델들의 발전을 이뤄냈습니다. 수많은 모델들이 구현 방식, 형태는 다르지만 '신경망'에 기반하고 있습니다. 예를들어 '고양이'를 구별해내기 위해 더 중요한 정보와, 덜 중요한 정보가 있다고 가정해봅시다. 뾰족한 귀가 고양이를 판단하는데 가장 중요한 정보라고 생각해보죠. 색, 크기, 눈의 모양, 귀 모양과 같은 다양한 데이터들 중 '귀의 모양'에 대한 정보에 가장 큰 가중치를 부여해 판단하는 모델을 만들어야 할 것입니다. 만일 모든 동물이 '눈 모양'은 비슷하게 생겨서 크게 중요한 변수가 되지 못한다면, '눈 모양'에 대한 데이터는 적은 가중치로 학습에 반영해도 될 것이구요. 이것이 바로 신경망을 통한 차원 축소의 기본 원리입니다. 
 
-아래와 같은 신경망 구조에서, Input data $X = [x_1, x_2 ... x_n]$는 vector화되어 신경망을 통과하게 됩니다.  벡터 데이터는 Weight vector $W = [w_1, w_2...]$ 이 곱해져 다음 Hidden layer로 넘어가게 됩니다. Weigh을 곱해 신경망을 통과한다는것은, 여러 신경망을 거치며 목표한 학습 task 에 중요한 정보를 남기고, 중요하지 않는 정보는 축소하는쪽으로 데이터의 차원이 축소됨을 의미합니다. 가장 분류 성능이 좋은 Weigt들의 조합을 학습시키는것이 바로 '신경망 모델의 학습'이고, 잘 학습된 모델은 학습에 사용되지 않는 데이터를 입력하더라고  분류작업을 잘 해내기를 기대합니다.
+아래와 같은 신경망 구조에서, Input data $X = [x_1, x_2 ... x_n]$는 vector화되어 신경망을 통과하게 됩니다.  벡터 데이터는 Weight vector $W = [w_1, w_2...]$ 이 곱해져 다음 Hidden layer로 넘어가게 됩니다. Weigh을 곱해 신경망을 통과한다는것은, **여러 신경망을 거치며 목표한 학습 task 에 중요한 정보를 남기고, 중요하지 않는 정보는 축소하는쪽으로 데이터의 차원이 축소됨을 의미합니다.** 가장 분류 성능이 좋은 Weigt들의 조합을 학습시키는것이 바로 '신경망 모델의 학습'이고, 잘 학습된 모델은 학습에 사용되지 않는 데이터를 입력하더라고  분류작업을 잘 해내기를 기대합니다.
+
+**(신경망이 기본적으로 각광받는 이유, 차원 축소와 Representation learning에 대해서는 별도 포스트를 통해 조금 더 구체적으로 알아보겠습니다.)**
 
 <img width="581" alt="Screenshot 2023-05-13 at 7 34 43 PM" src="https://github.com/ethHong/ethHong.github.io/assets/43837843/9765733d-c185-4759-9e01-d10e28b6c874">
 
@@ -63,13 +65,21 @@ GPT는 확실히 사람처럼 말을 하고, 정말 다양한 답변을 생성�
 
 ## **학습하지 않은 데이터에 대한 결과물 추론하기**
 
-이를 해소하기 위해 나온 Zero-shot learning 은, 더욱 사람과 같은 접근을 통해 모델이 직접 본 적 없는 데이터에 대한 추론도 가능하게 합니다. 예를들어, 사람은, '얼룩말'을 본 적이 없더라도 '말'을 본 적이 있다면, '줄무늬가 있는 말이다'라는 정보를 통해 얼룩말을 상상할 수 있습니다. 이와 같이 Zero shot learning은, 모델이 본 정보 (Seen Class)에 대한 지식을 전이 (transfer) 하여, 보지 못한 데이터 (Unseen class)를 예측합니다. 이를 가능하게 하기 위해, Zero Shot Learning (ZSL) 에선 Seen & Unseen class의 'Name'을, high dimensional vector에 embedding한다고 합니다. 이게 무슨 의미일까요?
+이를 해소하기 위해 나온 Zero-shot learning 은, 더욱 사람과 같은 접근을 통해 모델이 직접 본 적 없는 데이터에 대한 추론도 가능하게 합니다. 예를들어, 사람은, '얼룩말'을 본 적이 없더라도 '말'을 본 적이 있다면, '줄무늬가 있는 말이다'라는 정보를 통해 얼룩말을 상상할 수 있습니다. 이와 같이 Zero shot learning은, 모델이 본 정보 (Seen Class)에 대한 지식을 전이 (transfer) 하여, 보지 못한 데이터 (Unseen class)를 예측합니다. 이를 가능하게 하기 위해, Zero Shot Learning (ZSL) 에선 **Seen & Unseen class의 'Name'을, high dimensional vector에 embedding**한다고 합니다. 이게 무슨 의미일까요?
 
+> The semantic information embeds the names of both seen and unseen classes in high- dimensional vectors. Semantic information can be manually defined attribute vectors [14], automatically extracted word vectors [15], context-based embedding [16], or their combinations [17], [18]. In other words, ZSL uses seman- tic information to bridge the gap between the seen and unseen classes.
 
+Seen class이든 Unseen class이든, 이들은 'semantic interpretation'을 가지고 있습니다. 얼룩말을 0, 일반 말을 1이라고 'Label'을 붙인다면, 0과 1 자체는 숫자일 뿐이지만 이들이 실제로 나타내는 것 (representation)은  훨씬 고차원적인 정보를 담고 있습니다. 사람이 붙인 1 이라는 Label은 덩치가 크고, 빠르게 달릴 수 있으며 일반적으로 검은색, 적갈색 또는 흰색을 띄는 포유류를 가르킵니다. 0이 가르키는 '얼룩말'은 말과 거의 동일하게 생겼고, 행동하지만 줄무늬가 있는 동물의 의미합니다. 이러한 고차원적인 의미정보를 'Semantic information' 이라고 합니다. 이런 고차원적인 의미정보를 나타낼 수 있는 벡터 공간을 학습시키는것이 바로 embedding입니다. 즉, 위 논문에서 말하는 context based embedding, word vector 등은 단어 (또는 단어가 의미하는 것) 의 정보를 담고있는 embedding space를 학습해 활용합니다. 
 
-# Multimodality
+기존의 학습 방식이라면, 말과 유사한 이미지는 '0', 얼룩말과 유사한 이미지는 '1'이라는 label 을 구별하는 방식으로만 학습했을 테지만, 이렇게 semantic information 을 고려한 방식은 어떤 정보가 더 '말' 이 의미하는것과 가까우며, 어떤 정보가 더 '얼룩말' 이 의미하는것과 가까운지 알 수 있습니다. (Embedding Space에 대한 더 구체적인 내용은, 차후 다른 게시물을 통해 깊게 파보겠습니다.)
 
-## Cross-modal 데이터를 학습하는 모델. 
+> This learning paradigm can be compared to a human when recognizing a new object by measuring the likelihoods between its descriptions and the previously learned notions [19].
+
+사람은 기존에 학습했던 내용들과, 이미 학습한 내용들의 연관성을 토대로 본 적 없는 (배운적 없는) 내용에 대해서도 추론, 상상, 분류할 수 있습니다. '말', 과 '줄무늬'가 무엇인지 알고있다면 ''줄무늬가 있는 말' 의 이미지 역시 상상할 수 있겠죠. 이렇게 Semantic information를 통해, 정확히 pre-defined class의 분류를 수행하는것이 아닌, **의미적 정보를 활용해 직접 보지 못한 데이터에 대한 처리를 하도록 하는것이 Zero shot learning의 핵심입니다.**
+
+### Generalize Zero shot & Formulating problem
+
+위 논문에서는 Zero shot 만큼, Generalize Zero Shot 에도 주목하고 있습니다. 
 
 
 
