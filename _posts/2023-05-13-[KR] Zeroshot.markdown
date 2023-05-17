@@ -13,7 +13,7 @@ categories: 누구나가볍게읽기 DeepLearning ZeroShotLearning Multimodality
 published: true
 ---
 
-*본 게시글은, [A Review of Generalized Zero-Shot Learning Methods](https://arxiv.org/abs/2011.08641) 논문의 전반부 내용을 바탕으로 공부한 내용을 함께 다룹니다. 
+*본 게시글은, [A Review of Generalized Zero-Shot Learning Methods](https://arxiv.org/abs/2011.08641) 논문의 전반부 내용을 바탕으로 공부한 내용을 함께 다룹니다.
 
 # What is Zero shot learning, and why it's awsome?
 
