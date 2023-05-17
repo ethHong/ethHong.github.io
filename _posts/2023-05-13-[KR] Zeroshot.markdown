@@ -90,14 +90,12 @@ Seen class이든 Unseen class이든, 이들은 'semantic interpretation'을 가�
 ### Formulation
 
  Zero shot learning 의 문제를 다음과 같이 Formulate 하는데, 수식을 구체적으로 이해하기 다소 추상적이지만, 아래 식이 무엇을 '의미'하는지 하나씩 뜯어보겠습니다.
-$$
-S = \{{(x_i^s, a_i^s, y_i^s)_{i=1}^{N_s}}|x_i^s \in X^s, a_i^s i\in A^s, y_i^s \in Y^s\}
-$$
-Seen data의 Set을 의미합니다. Seen data $x_i^s$ 가 주어졌을 때의 Set이며, $X$, $A$, $Y$에 속하는 변수들은 각각 'Input data', 'semantic representation', 'label (class)'들의 데이터가 속한 Set입니다. 
-$$
-U = \{{(x_j^u, a_j^u, y_j^u)_{j=1}^{N_u}}|x_j^s \in X^s, a_j^s j\in A^s, y_j^s \in Y^s\}
-$$
 
+> $ S = {\{(x_i^s, a_i^s, y_i^s)_{i=1}^{N_s}} \mid x_i^s \in X^s, a_i^s i\in A^s, y_i^s \in Y^s\} $
+
+Seen data의 Set을 의미합니다. Seen data $x_i^s$ 가 주어졌을 때의 Set이며, $X$, $A$, $Y$에 속하는 변수들은 각각 'Input data', 'semantic representation', 'label (class)'들의 데이터가 속한 Set입니다. 
+
+> $ U = {\{(x_j^u, a_j^u, y_j^u)_{j=1}^{N_u}} \mid x_j^s \in X^s, a_j^s j\in A^s, y_j^s \in Y^s\} $
 
 마찬가지 형태의 데이터 Set이나,  $U$에 속하는 데이터는 'Unseen data'의 Set 입니다. 
 
