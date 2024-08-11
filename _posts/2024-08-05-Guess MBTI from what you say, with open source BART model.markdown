@@ -19,6 +19,21 @@ published: true
 * Build a MBTI classifier utilizing open source BART text classification model. 
 * Use Streamlit and Huggingface Spaces to easily build demo and deploy.
 
+# MBTI Classifier
+
+* I had built this simple app with Python and Streamlit library (Just for fun)
+*  It's running on a 🔗[Huggingface Spaces](Sukhyun/MBTI_translator), and if the connection is lost (or kernal is dead), please try to enter the link directly and restart the kernal!
+* **How to use?** : Just simply put your sentence, and push 'generate'. It may infer your MBTI type based on the sentence, and scores for each of 4 dimensions. 
+  * For instance, when you put ***I stayed home all day***, it gives you 'ISFP'. 
+  * I tried with a sentence ***We don't have time for wining. Let's just focus on our work without wasting time.*** and this time it gives you a 'ESTJ'
+
+<iframe
+	src="https://sukhyun-mbti-translator.hf.space"
+	frameborder="0"
+	width="850"
+	height="800"
+></iframe>
+
 # That sounds like... ~ MBTI type!
 
 For recent several years, MBTI test had been highly trending in Korea (I'm not sure it was also trending in another regions...). MBTI (Myers-Briggs Type Indicator) is one of the methodologies used to indicate one's personality through a questionnaire, which classifies one's personality into 16 different types based on the responses. Even there are some criticism against classifying personality in countable number of categories, it had been kind of cultural trend in young generation.
@@ -35,21 +50,6 @@ However, when I heard about the MBTI, **I recognized that this is a vector with 
 * Judging / Perceiving
 
 For each of the dimensions, everyone may have continuous and numerical score. **Here, I I got an idea to build a translator (classifier) which matches a sentence, or behavior one make into the most probable MBTI Type.** 
-
-## Sharing the outcome first
-
-* I had built this simple app with Python and Streamlit library.
-*  It's running on a 🔗[Huggingface Spaces](Sukhyun/MBTI_translator), and if the connection is lost (or kernal is dead), please try to enter the link directly and restart the kernal!
-* **How to use?** : Just simply put your sentence, and push 'generate'. It may infer your MBTI type based on the sentence, and scores for each of 4 dimensions. 
-  * For instance, when you put ***I stayed home all day***, it gives you 'ISFP'. 
-  * I tried with a sentence ***We don't have time for wining. Let's just focus on our work without wasting time.*** and this time it gives you a 'ESTJ'
-
-<iframe
-	src="https://sukhyun-mbti-translator.hf.space"
-	frameborder="0"
-	width="850"
-	height="800"
-></iframe>
 
 # Approach
 
