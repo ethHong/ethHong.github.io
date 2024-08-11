@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Guess MBTI from what you say, with open source BART model - Use Streamlit and Hugginface Spaces to deploy your app!"
+title:  "Build deploy an MBTI Predictor Using Streamlit and Huggingface Spaces: Utilizing open source BART model"
 tags:
   - Blog
   - MathJax
@@ -19,7 +19,7 @@ published: true
 * Build a MBTI classifier utilizing open source BART text classification model. 
 * Use Streamlit and Huggingface Spaces to easily build demo and deploy.
 
-# MBTI Classifier
+# MBTI Predictor
 
 * I had built this simple app with Python and Streamlit library (Just for fun)
 *  It's running on a 🔗[Huggingface Spaces](Sukhyun/MBTI_translator), and if the connection is lost (or kernal is dead), please try to enter the link directly and restart the kernal!
@@ -49,7 +49,7 @@ However, when I heard about the MBTI, **I recognized that this is a vector with 
 * Thinking / Feeling
 * Judging / Perceiving
 
-For each of the dimensions, everyone may have continuous and numerical score. **Here, I I got an idea to build a translator (classifier) which matches a sentence, or behavior one make into the most probable MBTI Type.** 
+For each of the dimensions, everyone may have continuous and numerical score. **Here, I I got an idea to build a prediction module, which matches a sentence, or behavior one make into the most probable MBTI Type.** 
 
 # Approach
 
