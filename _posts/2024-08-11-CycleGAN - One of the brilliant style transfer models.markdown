@@ -7,7 +7,7 @@ tags:
   - Jekyll
   - LaTeX
 use_math: true
-date: 2023-05-13
+date: 2024-08-11
 last_modified_at: 2024-08-11
 categories: DeepLearning GAN Tutorial
 published: true
@@ -45,23 +45,21 @@ First of all, if you look at the CycleGAN paper, it fundamentally uses the Adver
 
 However, the **adversarial loss** appears for both directions, $G : X \rightarrow Y$ and $F : Y \rightarrow X$.
 
-$\mathcal{L}_{GAN}(G, D_Y, X, Y)$ applies when moving from X to Y (Discriminator on Y)_
+$\mathcal{L}\_{GAN}(G, D_Y, X, Y)$ is loss function of the direction X to Y (Discriminator on Y), $\mathcal{L}\_{GAN}(F, D_X, X, Y)$ is the loss function of the other direction (Discriminator on X).
 
-$\mathcal{L}_{GAN}(F, D_X, X, Y)$ applies in the opposite case (Discriminator on X).
+To write the **adversarial loss function** in more detail, it is :
 
-To write the **adversarial loss function** in more detail:
-
-$\mathcal{L}_{GAN}(G, D_Y, X, Y) = E_{y \sim p_{data(y)}}[\log(D_{Y}(y))] + E_{x \sim p_{data(x)}}[\log(1-D_{Y}(G(x)))]$ is the same equation used in GANs, and for $\mathcal{L}_{GAN}(F, D_X, X, Y)$, it is the same equation but with the X and Y domains reversed.
+$\mathcal{L}\_{GAN}(G, D_Y, X, Y) = E\_{y~p\_{data(y)}}[log(D\_{Y}(y))] +  E\_{x~p\_{data(x)}}[log(1-D\_{Y}(G(x)))]$ which is same as the formula used for GAN. $\mathcal{L}\_{GAN}(F, D_X, X, Y)$ can also be written in same way, only changing domain direction of X and Y. 
 
 As for the **Cycle Loss**, as explained above, the goal is to make $y \rightarrow F(y) \rightarrow G(F(y))$ as close as possible to $y$ (i.e., when the translation is reconstructed, the original input should have minimal error). CycleGAN aims to ensure that both translators, $G$ and $F$, are invertible.
 
 So, it is written as:
 
-**$\mathcal{L}_{cyc}(G, F) = E_{x \sim p_{data}(x)}[\Vert F(G(X)) - x \Vert_{1}] + E_{y \sim p_{data}(y)}[\Vert G(F(Y)) - y \Vert_{1}] $**
+ **$\mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}] + E\_{y~p\_{data}(y)}[\Vert G(F(Y))-y \Vert\_{1}] $** 
 
 **The final full objective is a combination of the adversarial loss and the cycle loss:**
 
-$\mathcal{L}(G, F, D_X, D_Y) = \mathcal{L}_{GAN}(G, D_Y, X, Y) + \mathcal{L}_{GAN}(F, D_X, X, Y) + \lambda\mathcal{L}_{cyc}(G, F)$
+ $\mathcal{L}(G, F, D\_X, D\_Y) = \mathcal{L}\_{GAN}(G, D_Y, X, Y) + \mathcal{L}\_{GAN}(F, D_X, X, Y) + \lambda\mathcal{L}\_{cyc}(G, F)$
 
 According to the paper, the reason for the $\lambda$ is to give weight to the Cycle Loss, adjusting the relative importance between the two losses. This becomes an important new parameter during training.
 

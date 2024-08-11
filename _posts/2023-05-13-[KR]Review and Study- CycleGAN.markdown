@@ -36,8 +36,6 @@ Google Style Transfer Colab Tutorial의 documentation에 의하면, 2015년에 �
 
 ## Loss Function for Cycle GAN
 
-
-
 우선, CycleGAN의 논문을 보면 기본적으로 GAN의 Adversarial Loss (서로 반대의 목적을 가진 Discriminator 와 Generator의 Loss)를 사용합니다.
 
 다만, $G : X \rightarrow Y$ 와 $F : Y \rightarrow X$의 두 방향에 대한 **adversarial loss**가 모두 등장합니다.
