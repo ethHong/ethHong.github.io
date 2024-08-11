@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Build deploy an MBTI Predictor Using Streamlit and Huggingface Spaces: Utilizing open source BART model"
+title:  "Build and deploy an MBTI Predictor Using Streamlit and Huggingface Spaces: Utilizing open source BART model"
 tags:
   - Blog
   - MathJax
