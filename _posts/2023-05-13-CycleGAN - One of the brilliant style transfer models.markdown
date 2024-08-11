@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "[KR] Review of style transfer model - CycleGAN"
+title:  "CycleGAN - One of the brilliant style transfer models"
 tags:
   - Blog
   - MathJax
   - Jekyll
   - LaTeX
 use_math: true
-date:   2023-05-13
-last_modified_at:  2023-05-13
+date: 2023-05-13
+last_modified_at: 2024-08-11
 categories: DeepLearning GAN Tutorial
 published: true
 ---
