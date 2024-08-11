@@ -57,13 +57,13 @@ For each of the dimensions, everyone may have continuous and numerical score. **
 
 How does MBTI work? Let's think of MBTI as a 1*4 vector.
 
-$$MBTI = [EI, SN, TF, PJ]$$
+$MBTI = [EI, SN, TF, PJ]$
 
 The first dimension $EI$ represents a score, or some numerical value which represent 'how likely the person is an 'Extrovert' rather than 'Introvert'. We can represent rest of the dimension in the same way. 
 
 Then, how can we convert a **text** into a vector which represent MBTI? If there are some keywords that represent each of the MBTI aspects, and see which keywords are semantically clost to the given sentece, we may be able to decide the MBTI class fo the given sentence. 
 
-For instance, we may define **tems like ["extrovert", "expression", "outside", "together"]** to represent 'Extrovert', while **["introvert", "indirect", "Concerns", "alone"] to represent 'Introvert'.
+For instance, we may define **tems like ["extrovert", "expression", "outside", "together"]** to represent 'Extrovert', while **["introvert", "indirect", "Concerns", "alone"] to represent 'Introvert'.**
 
 ### Text classification model - BART
 
@@ -127,7 +127,7 @@ nli_model = (
 
 Next, define a function which takes a squence (sentence) and label, and **return probability that the sequence belongs to the label.**
 
-~~~ Python
+~~~ python
 #BART_utils.py
 def get_prob(sequence, label):
     premise = sequence
@@ -149,10 +149,10 @@ def get_prob(sequence, label):
 
 Utilizing this module, conduct series of tasks by deifing functions:
 
-1. ~judge_mbti(sequence, labels)~: When taking a **sequence** and **a set of labels**, return probability score of each labels for that sequence. 
-2. ~conpute_score(text, type)~ : When taking a **sequence**, and MBTI dimension you would like to decide (e.g. "E_I", or "N_S" etc...)
+1. `judge_mbti(sequence, labels)` : When taking a **sequence** and **a set of labels**, return probability score of each labels for that sequence. 
+2. `conpute_score(text, type)` : When taking a **sequence**, and MBTI dimension you would like to decide (e.g. "E_I", or "N_S" etc...)
    1. Get sum of probability scores for each of the types, using 'judge_mbti'. 
-3. ~mbti_translator(text)~ : Give the final choice, and show scores.
+3. `mbti_translator(text)` : Give the final choice, and show scores.
 
 ~~~python
 #BART_utils.py
@@ -163,7 +163,6 @@ def judge_mbti(sequence, labels):
         out.append((l, temp))
     out = sorted(out, key=lambda x: x[1], reverse=True)
     return out
-
 
 def compute_score(text, type):
     x, y = type.split("_")
@@ -183,7 +182,6 @@ def compute_score(text, type):
     stat = {x: x_score_scaled, y: y_score_scaled}
 
     return choice, stat
-
 
 def mbti_translator(text):
     E_I = compute_score(text, "E_I")
@@ -235,7 +233,6 @@ I am sharing the code of demo I shared at the beginning of the post. (It's only 
 
 ~~~python
 #app.py
-
 import streamlit as st
 from BART_utils import (
     get_prob,
@@ -245,7 +242,6 @@ from BART_utils import (
     plot_mbti,
     device,
 )
-
 
 st.title("MBTI translator")
 if device == "cpu":
