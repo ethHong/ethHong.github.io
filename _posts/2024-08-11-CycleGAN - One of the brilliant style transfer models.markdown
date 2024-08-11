@@ -13,6 +13,8 @@ categories: DeepLearning GAN Tutorial
 published: true
 ---
 
+* *The original post had been composed in Korean by myself, and power of AI had provided assistance for translation and revision. Contents themselves are created by  the writer, Sukhyun Hong without usage of AI tools.* 
+
 A few years ago, before user-friendly generation AI tools came out in the world, I discovered many interesting resources related to this interesting style transfer model - 'Cycle GAN' while researching image generation. 
 
 We have DALL-E, Midjourney, and Stable Diffusion now so image generation (mostly test to image generation) seems to be so easy today. However, before ChatGPT and the gen-AI boom, I remember GAN models being referred to as a game changer.
@@ -248,6 +250,6 @@ CycleGAN origianl Repo:  <https://github.com/junyanz/pytorch-CycleGAN-and-pix2pi
 
 Colab Tutorial: <https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/cyclegan.ipynb#scrollTo=_xnMOsbqHz61>
 
-CycleGAN 논문: <https://arxiv.org/abs/1703.10593>
+CycleGAN: <https://arxiv.org/abs/1703.10593>
 
 NYU Deep Learning - Generative models, VAE: <https://atcold.github.io/pytorch-Deep-Learning/en/week08/08-3>
