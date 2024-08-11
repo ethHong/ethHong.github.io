@@ -16,6 +16,9 @@ published: true
 * 🔗[Link to Repository](https://github.com/ethHong/mbti_translator_demo)
 * 🔗[Link to Huggingface Spaces](Sukhyun/MBTI_translator)
 
+* Build a MBTI classifier utilizing open source BART text classification model. 
+* Use Streamlit and Huggingface Spaces to easily build demo and deploy.
+
 # That sounds like... ~ MBTI type!
 
 For recent several years, MBTI test had been highly trending in Korea (I'm not sure it was also trending in another regions...). MBTI (Myers-Briggs Type Indicator) is one of the methodologies used to indicate one's personality through a questionnaire, which classifies one's personality into 16 different types based on the responses. Even there are some criticism against classifying personality in countable number of categories, it had been kind of cultural trend in young generation.
