@@ -7,8 +7,8 @@ tags:
   - Jekyll
   - LaTeX
 use_math: true
-date: 2024-08-11
-last_modified_at: 2024-08-11
+date: 2024-07-30
+last_modified_at: 2024-07-30
 categories: DeepLearning GAN Tutorial
 published: true
 ---
