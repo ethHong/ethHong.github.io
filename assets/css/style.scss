@@ -19,7 +19,6 @@
     overflow-x: auto; /* Enable horizontal scroll if too wide */
     white-space: normal; /* Allow wrapping */
     font-size: 90%; /* Adjust font size to fit better, if necessary */
-    text-overflow: wrap;
 }
 
 /* Responsive inline math */
@@ -29,5 +28,4 @@
     word-wrap: break-word; /* Break long inline math */
     overflow-x: auto;
     white-space: normal; /* Allow wrapping */
-    text-overflow: wrap;
 }
