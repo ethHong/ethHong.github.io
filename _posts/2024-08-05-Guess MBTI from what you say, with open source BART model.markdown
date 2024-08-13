@@ -27,14 +27,14 @@ published: true
   * For instance, when you put ***I stayed home all day***, it gives you 'ISFP'. 
   * I tried with a sentence ***We don't have time for wining. Let's just focus on our work without wasting time.*** and this time it gives you a 'ESTJ'
 
-<div style="text-align: center;">
+<p align="middle">
 <iframe
 	src="https://sukhyun-mbti-translator.hf.space"
 	frameborder="0"
 	width="600"
   height = "800"
 ></iframe>
-</div>
+</p>
 
 
 # That sounds like... ~ MBTI type!
