@@ -30,9 +30,9 @@ published: true
 <iframe
 	src="https://sukhyun-mbti-translator.hf.space"
 	frameborder="0"
-	width="400"
+	width="500"
   height = "800"
-></iframe>
+</iframe>
 
 
 # That sounds like... ~ MBTI type!

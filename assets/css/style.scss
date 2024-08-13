@@ -12,3 +12,20 @@
   @import "dark";
 {%- endif -%}
 
+/* Responsive math block display */
+.katex-display, .MathJax_Display {
+    display: block;
+    max-width: 100%;  /* Ensure it fits within the container width */
+    overflow-x: auto; /* Enable horizontal scroll if too wide */
+    white-space: normal; /* Allow wrapping */
+    font-size: 90%; /* Adjust font size to fit better, if necessary */
+}
+
+/* Responsive inline math */
+.katex, .MathJax {
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word; /* Break long inline math */
+    overflow-x: auto;
+    white-space: normal; /* Allow wrapping */
+}
