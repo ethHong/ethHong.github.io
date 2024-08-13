@@ -75,7 +75,9 @@ According to the paper, the reason for the $\lambda$ is to give weight to the Cy
 
 In the end, our goal is to find translators $G$ and $F$ that satisfy the following condition:
 
-> $G^, F^ = \arg\min{G, F} \max{D{X}, D{Y}} \mathcal{L}(G, F, D\_X, D\_Y)$
+> $$
+> G^*, F^* = \arg\min{G, F} \max{D{X}, D{Y}} \mathcal{L}(G, F, D\_X, D\_Y)
+> $$
 
 
 ****
