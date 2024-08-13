@@ -1,3 +1,6 @@
+---
+---
+
 @import "plain";
 
 {% if site.plainwhite.search %}
@@ -15,15 +18,16 @@
     max-width: 100%;  /* Ensure it fits within the container width */
     overflow-x: auto; /* Enable horizontal scroll if too wide */
     white-space: normal; /* Allow wrapping */
-    font-size: 85%; /* Further reduce font size if necessary */
-    word-wrap: break-word; /* Break long formulas to fit within container */
+    font-size: 90%; /* Adjust font size to fit better, if necessary */
+    text-overflow: wrap;
 }
 
 /* Responsive inline math */
 .katex, .MathJax {
     display: inline-block;
     max-width: 100%;
+    word-wrap: break-word; /* Break long inline math */
     overflow-x: auto;
     white-space: normal; /* Allow wrapping */
-    word-wrap: break-word; /* Break long inline formulas */
+    text-overflow: wrap;
 }
