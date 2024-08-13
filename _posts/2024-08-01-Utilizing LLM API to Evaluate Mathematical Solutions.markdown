@@ -136,10 +136,11 @@ The dataset includes different levels of problems from 1 to 5. Below is example 
 
  We can formulate this by:
 
-* Begin with a problem set defined as:: $$X = (x_1, x_2, \ldots, x_n)$$
+* Begin with a problem set defined as: $X = (x_1, x_2, \ldots, x_n)$
 * For each problem, corresponding human-generated solutions are represented as:
-   $$S_h = (s_{h_1}, s_{h_2}, \ldots, s_{h_n})$$
-* $$S_l = LLM(prompt_{solving}, X) = (s_{l_1}, s_{l_2}, \ldots, s_{l_n})$$
+   
+   > $S_h = (s_{h_1}, s_{h_2}, \ldots, s_{h_n})$
+* > $S_l = LLM(prompt_{solving}, X) = (s_{l_1}, s_{l_2}, \ldots, s_{l_n})$
 
 ## Evaluate solutions based on concept understanding - Inclusion of concepts.
 

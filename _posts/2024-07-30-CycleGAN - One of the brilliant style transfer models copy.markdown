@@ -57,9 +57,7 @@ is the loss function of the other direction (Discriminator on X).
 
 To write the **adversarial loss function** in more detail, it is :
 
-> $$
-> \mathcal{L}\_{GAN}(G, D_Y, X, Y) = E\_{y~p\_{data(y)}}[log(D\_{Y}(y))] \\+  E\_{x~p\_{data(x)}}[log(1-D\_{Y}(G(x)))]
-> $$
+> $\mathcal{L}\_{GAN}(G, D_Y, X, Y) = E\_{y~p\_{data(y)}}[log(D\_{Y}(y))] +  E\_{x~p\_{data(x)}}[log(1-D\_{Y}(G(x)))]$
 
 which is same as the formula used for GAN. $\mathcal{L}\_{GAN}(F, D_X, X, Y)$ can also be written in same way, only changing domain direction of X and Y. 
 
@@ -67,24 +65,17 @@ As for the **Cycle Loss**, as explained above, the goal is to make $y \rightarro
 
 So, it is written as: 
 
-> $$
-> \mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}] \\
-> + E\_{y~p\_{data}(y)}[\Vert G(F(Y))-y \Vert\_{1}]
-> $$
+> $\mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}]+ E\_{y~p\_{data}(y)}[\Vert G(F(Y))-y \Vert\_{1}]$
 
 **The final full objective is a combination of the adversarial loss and the cycle loss:**
 
-> $$
-> \mathcal{L}(G, F, D\_X, D\_Y) = \mathcal{L}\_{GAN}(G, D_Y, X, Y) \\+ \mathcal{L}\_{GAN}(F, D_X, X, Y) + \lambda\mathcal{L}\_{cyc}(G, F)
-> $$
+> $\mathcal{L}(G, F, D\_X, D\_Y) = \mathcal{L}\_{GAN}(G, D_Y, X, Y)+ \mathcal{L}\_{GAN}(F, D_X, X, Y) + \lambda\mathcal{L}\_{cyc}(G, F)$
 
 According to the paper, the reason for the $\lambda$ is to give weight to the Cycle Loss, adjusting the relative importance beween the two losses. This becomes an important new parameter during training.
 
 In the end, our goal is to find translators $G$ and $F$ that satisfy the following condition:
 
-> $$
-> G^*, F^* = \arg\min_{G, F} \max_{D_{X}, D_{Y}} \mathcal{L}(G, F, D_X, D_Y)
-> $$
+> $G^*, F^* = \arg\min_{G, F} \max_{D_{X}, D_{Y}} \mathcal{L}(G, F, D_X, D_Y)$
 
 
 ****
