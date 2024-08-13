@@ -15,9 +15,8 @@
 /* Ensure images and embeds do not exceed container width */
 img, embed, iframe {
     max-width: 100%;
-    height: auto; /* Auto height to maintain aspect ratio */
-    display: block;
-    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio if possible */
+    min-height: 800px; /* Set a reasonable minimum height */
 }
 
 /* To dynamically manage aspect ratio for iframes (e.g., videos) */
