@@ -69,7 +69,7 @@ So, it is written as:
 
 **The final full objective is a combination of the adversarial loss and the cycle loss:**
 
-> $\mathcal{L}(G, F, D\_X, D\_Y) = \mathcal{L}\_{GAN}(G, D\_Y, X, Y)+ \\ \mathcal{L}\_{GAN}(F, D\_X, X, Y) + \lambda\mathcal{L}\_{cyc}(G, F)$
+> $\mathcal{L}(G, F, D\_X, D\_Y) = \mathcal{L}\_{GAN}(G, D\_Y, X, Y)+ \\\ \mathcal{L}\_{GAN}(F, D\_X, X, Y) + \lambda\mathcal{L}\_{cyc}(G, F)$
 
 According to the paper, the reason for the $\lambda$ is to give weight to the Cycle Loss, adjusting the relative importance beween the two losses. This becomes an important new parameter during training.
 
