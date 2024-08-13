@@ -69,7 +69,7 @@ which is same as the formula used for GAN. $\mathcal{L}\_{GAN}(F, D_X, X, Y)$ ca
 
 As for the **Cycle Loss**, as explained above, the goal is to make $y \rightarrow F(y) \rightarrow G(F(y))$ as close as possible to $y$ (i.e., when the translation is reconstructed, the original input should have minimal error). CycleGAN aims to ensure that both translators, $G$ and $F$, are invertible.
 
-So, it is written as:
+So, it is written as: 
 
 > $$
 > \mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}] \\
