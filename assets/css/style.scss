@@ -12,28 +12,18 @@
 /* Responsive math block display */
 .katex-display, .MathJax_Display {
     display: block;
-    max-width: 100%;
-    font-size: 85%; /* Further reduce font size for better fitting */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Hide vertical overflow */
-    white-space: normal; /* Allow breaking */
-    word-wrap: break-word; /* Ensure wrapping if necessary */
-    line-height: 1.2em; /* Slightly adjust line height */
+    max-width: 100%;  /* Ensure it fits within the container width */
+    overflow-x: auto; /* Enable horizontal scroll if too wide */
+    white-space: normal; /* Allow wrapping */
+    font-size: 85%; /* Further reduce font size if necessary */
+    word-wrap: break-word; /* Break long formulas to fit within container */
 }
 
 /* Responsive inline math */
 .katex, .MathJax {
     display: inline-block;
     max-width: 100%;
-    font-size: 90%; /* Reduce font size for inline math */
     overflow-x: auto;
     white-space: normal; /* Allow wrapping */
-    word-wrap: break-word;
-}
-
-/* Optional: Adjust the margin for block-level math equations to ensure they fit well within the container */
-.katex-display, .MathJax_Display {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.5em 0; /* Add padding to avoid overlap */
+    word-wrap: break-word; /* Break long inline formulas */
 }
