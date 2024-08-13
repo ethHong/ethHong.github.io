@@ -30,8 +30,8 @@ published: true
 <iframe
 	src="https://sukhyun-mbti-translator.hf.space"
 	frameborder="0"
-	width="850"
-	height="800"
+	width="400"
+  height = "800"
 ></iframe>
 
 
