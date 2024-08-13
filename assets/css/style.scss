@@ -15,13 +15,42 @@
 /* Ensure images and embeds do not exceed container width */
 img, embed, iframe {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; /* Auto height to maintain aspect ratio */
+    display: block;
+    width: 100%; /* Ensure full width */
 }
 
-/* For long text or code blocks, make sure they wrap */
-pre, code {
-    white-space: pre-wrap; /* Allow line breaks in long texts or code */
-    word-wrap: break-word; /* Break words to fit container */
+/* To dynamically manage aspect ratio for iframes (e.g., videos) */
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Optional: background color */
 }
 
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
+/* Make sure inline and display math formulas are responsive */
+.katex-display {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: normal;
+}
+
+/* For MathJax specifically */
+.MathJax_Display {
+    text-align: left;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: normal;
+}
