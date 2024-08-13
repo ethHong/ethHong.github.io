@@ -57,7 +57,7 @@ is the loss function of the other direction (Discriminator on X).
 
 To write the **adversarial loss function** in more detail, it is :
 
-> $\mathcal{L}\_{GAN}(G, D\_Y, X, Y) = E\_{y~p\_{data(y)}}[log(D\_{Y}(y))] + \\ E\_{x~p\_{data(x)}}[log(1-D\_{Y}(G(x)))]$
+> $\mathcal{L}\_{GAN}(G, D\_Y, X, Y) = E\_{y~p\_{data(y)}}[log(D\_{Y}(y))] + \\\ E\_{x~p\_{data(x)}}[log(1-D\_{Y}(G(x)))]$
 
 which is same as the formula used for GAN. $\mathcal{L}\_{GAN}(F, D\_X, X, Y)$ can also be written in same way, only changing domain direction of X and Y. 
 
@@ -65,7 +65,7 @@ As for the **Cycle Loss**, as explained above, the goal is to make $y \rightarro
 
 So, it is written as: 
 
-> $\mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}]+ \\ E\_{y~p\_{data}(y)}[\Vert G(F(Y))-y \Vert\_{1}]$
+> $\mathcal{L}\_{cyc}(G, F) = E\_{x~p\_{data}(x)}[\Vert F(G(X))-x \Vert\_{1}]+ \\\ E\_{y~p\_{data}(y)}[\Vert G(F(Y))-y \Vert\_{1}]$
 
 **The final full objective is a combination of the adversarial loss and the cycle loss:**
 
