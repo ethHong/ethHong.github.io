@@ -11,3 +11,21 @@
   @import "toggle";
   @import "dark";
 {%- endif -%}
+
+/* Ensure images and embeds do not exceed container width */
+img, embed, iframe {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* For long text or code blocks, make sure they wrap */
+pre, code {
+    white-space: pre-wrap; /* Allow line breaks in long texts or code */
+    word-wrap: break-word; /* Break words to fit container */
+}
+
+/* General container settings to prevent overflow */
+.container {
+    max-width: 100%;
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+}
