@@ -47,15 +47,11 @@ First of all, if you look at the CycleGAN paper, it fundamentally uses the Adver
 
 However, the **adversarial loss** appears for both directions, $G : X \rightarrow Y$ and $F : Y \rightarrow X$.
 
-> $$
-> \mathcal{L}\_{GAN}(G, D_Y, X, Y)
-> $$
+> $\mathcal{L}\_{GAN}(G, D_Y, X, Y)$
 
 is loss function of the direction X to Y (Discriminator on Y), while
 
-> $$
-> \mathcal{L}\_{GAN}(F, D_X, X, Y)
-> $$
+> $\mathcal{L}\_{GAN}(F, D_X, X, Y)$
 
 is the loss function of the other direction (Discriminator on X).
 
