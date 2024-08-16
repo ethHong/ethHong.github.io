@@ -261,15 +261,10 @@ $$
 d_i = y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij}
 $$
 So, putting this into $P(Data | Model) * P(Model)$ Likelihood
-
-
 $$
 \begin{aligned}
-\log L(\theta, \sigma^2) &= 
--\frac{n}{2} \log(2\pi) \\
-&\quad - n \log(\sigma) \\
-&\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 \\
-&\quad - \frac{\lambda}{2} \sum \theta_i^2
+\log L(\theta, \sigma^2) &= -\frac{n}{2} \log(2\pi) - n \log(\sigma) \\
+&\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 - \frac{\lambda}{2} \sum \theta_i^2
 \end{aligned}
 $$
 
@@ -285,11 +280,8 @@ $$
 And the one from Linear Regression example, we had
 $$
 \begin{aligned}
-\log L(\theta, \sigma^2) &= 
--\frac{n}{2} \log(2\pi) \\
-&\quad - n \log(\sigma) \\
-&\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 \\
-&\quad - \frac{\lambda}{2} \sum \theta_i^2
+\log L(\theta, \sigma^2) &= -\frac{n}{2} \log(2\pi) - n \log(\sigma) \\
+&\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 - \frac{\lambda}{2} \sum \theta_i^2
 \end{aligned}
 $$
 Except for having regularization term, we can see they are basically the same. Except for constant terms (in terms of variable $\mu, \sigma, and \theta$) we can see minimizing these formulation is it's basically minimizing 'Errors' between esmimated value, and the actual data. 
