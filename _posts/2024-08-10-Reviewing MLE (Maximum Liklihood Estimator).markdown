@@ -89,12 +89,11 @@ Here, if we find $\mu$ and $\sigma$ that maximized this $L(\mu, \sigma ; x)$
 
 To get derivative easility, we can take log-likelihood:
 $$
-log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)-\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
-$$
-
-$$
+log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)-\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2}) \\\
 = -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
 $$
+
+
 We can compute derivative in terms of $\mu$ and $sigma$, like this:
 
 <img width="757" alt="image" src="https://github.com/user-attachments/assets/85da5343-eb03-4b81-b78f-38bf913e8e0e">
