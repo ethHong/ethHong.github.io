@@ -87,15 +87,17 @@ Here, if we find $\mu$ and $\sigma$ that maximized this $L(\mu, \sigma ; x)$
 
 To get derivative easility, we can take log-likelihood:
 $$
-log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n) \\
+log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)
+$$
 
+$$
 -\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
 $$
+
 
 $$
 = -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
 $$
-
 We can compute derivative in terms of $\mu$ and $sigma$, like this:
 
 <img width="757" alt="image" src="https://github.com/user-attachments/assets/85da5343-eb03-4b81-b78f-38bf913e8e0e">
@@ -282,7 +284,7 @@ $$
 
 
 
-in which $Lambda$  is a regularizing constant (Weight for regularizaing term.)
+in which $\Lambda$  is a regularizing constant (Weight for regularizaing term.)
 
 ## So, this MLE with Bayesian approach lead to Least Square Error + Regularization.
 
@@ -299,13 +301,11 @@ $$
 $$
 - \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
-
 Except for having regularization term, we can see they are basically the same. Except for constant terms (in terms of variable $\mu, \sigma, and \theta$) we can see minimizing these formulation is it's basically minimizing 'Errors' between esmimated value, and the actual data. 
 $$
-\sum_{i=1}^n(x_i-\mu)^2 \text{ for Gaussian, and }
+\sum_{i=1}^n(x_i-\mu)^2 \text{ for Gaussian,}
 $$
-
+and
 $$
 (\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 \text{ for linear model}
 $$
-
