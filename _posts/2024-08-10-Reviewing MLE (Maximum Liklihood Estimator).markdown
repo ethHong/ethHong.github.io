@@ -13,9 +13,7 @@ categories: Statistics DataScience
 published: True
 ---
 
-# This post review concepts and implications of MLE. 
-
-## Python to model MLE In the next post
+**🗒️This post review concepts and implications of MLE. Python to model MLE In the next post.**
 
 In the next post, I will try to use Python to model MLE, and compare results with Linear Regression model in Scikit Learn. 
 
@@ -152,13 +150,9 @@ X = (X_1, X_2, ...X_n) \sim^{iid} Bernoulli(p)
 $$
 where $x$ is 1 of head, and 0 if tail. Like we have done in Gaussian example, Likelihood could be formulated as product of probabilities of $x_i$:
 $$
-L(p;x) = P_p(X=x) = \prod\limits_{i=1}^npx_i(x_i) = \prod\limits_{i=1}^np^{(x_i)}(1-p)^{(1-x_i)}
-$$
-
-$$
+L(p;x) = P_p(X=x) = \prod\limits_{i=1}^npx_i(x_i) = \prod\limits_{i=1}^np^{(x_i)}(1-p)^{(1-x_i)}\\
 = p^{(\sum\limits_{i=1}^nx_i)}(1-p)^{(n - \sum\limits_{i=1}^nx_i)}
 $$
-
 Taking log, we get
 $$
 (\sum\limits_{i=1}^nx_i)log(p) + (n - \sum\limits_{i=1}^nx_i)log(1-p)
@@ -254,8 +248,7 @@ $$
 $$
 which is multiplication of probability of $\theta_i$s. So, taking logarithm on $P(Data | Model) * P(Model)$ could be written as:
 $$
-log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\theta_i^2}) + \\
-log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}d_i^2})\\
+log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\theta_i^2}) + log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}d_i^2})\\
 $$
 and maximizing this is same as minimizing 
 $$
@@ -292,7 +285,7 @@ log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n) -\frac{1}{2}(\frac{\sum_
 $$
 And the one from Linear Regression example, we had
 $$
-logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma)\\
+logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma) \\
 - \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
 Except for having regularization term, we can see they are basically the same. Except for constant terms (in terms of variable $\mu, \sigma, and \theta$) we can see minimizing these formulation is it's basically minimizing 'Errors' between esmimated value, and the actual data. 
