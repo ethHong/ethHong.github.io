@@ -89,13 +89,8 @@ Here, if we find $\mu$ and $\sigma$ that maximized this $L(\mu, \sigma ; x)$
 
 To get derivative easility, we can take log-likelihood:
 $$
-log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)
+log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)-\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
 $$
-
-$$
--\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
-$$
-
 
 $$
 = -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
@@ -277,11 +272,12 @@ So, putting this into $P(Data | Model) * P(Model)$ Likelihood:
 
 
 $$
-logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma)
+logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma) \\\
+-\frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
 
 $$
-- \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
+
 $$
 
 
@@ -297,10 +293,7 @@ log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n) -\frac{1}{2}(\frac{\sum_
 $$
 And the one from Linear Regression example, we had
 $$
-logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma)
-$$
-
-$$
+logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma)\\\
 - \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
 Except for having regularization term, we can see they are basically the same. Except for constant terms (in terms of variable $\mu, \sigma, and \theta$) we can see minimizing these formulation is it's basically minimizing 'Errors' between esmimated value, and the actual data. 
