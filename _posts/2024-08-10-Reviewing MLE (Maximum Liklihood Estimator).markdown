@@ -13,6 +13,20 @@ categories: Statistics DataScience
 published: True
 ---
 
+# This post review concepts and implications of MLE. 
+
+## Python to model MLE In the next post
+
+In the next post, I will try to use Python to model MLE, and compare results with Linear Regression model in Scikit Learn. 
+
+[**🔗The codes are in this Github Repo](https://github.com/ethHong/MLE_regression_world_happiness),** utilizing [World Hapiness Report Data](https://worldhappiness.report/data/)
+
+This Article and Python practice is made after reviewing [Probability & Statistics for Machine Learning & Data Science](https://www.coursera.org/learn/machine-learning-probability-and-statistics) by DeepLearning.AI in Coursera. It would be great to look into this course if you have time. 
+
+The Python codes and contents of this post is written by the author - Sukhyun Hong after reviewing and understanding the course above. 
+
+---
+
 In undergraduate statistic courses, and major courses as Econometrics, I remember learning MLE (Maximum Likelihood Estimator) and it's relevace with linear regression. However, even I dealt with formulations and solving problems, it was difficult to get the implication of 'maximizing the likelihood', and why it's so important in Machine Learning. 
 
 In this post (and through series of follow up posts) I would like to go through detailed review of key concepts of MLE, Bayesian approaches and Linear regression **not only to just get the formulations, but also look into what they truly imply.** 
@@ -20,18 +34,6 @@ In this post (and through series of follow up posts) I would like to go through 
 In the first part, I would like to review implication, definition, and formulation of MLE with Gaussian Bernoulli.
 
 In the second part, I would like to go through Linear Model with MLE, and go through some Bayesian approach to look into relationship between MLE, Linear Regression.
-
-# This post review concepts and implications of MLE. 
-
-## Python to model MLE In the next post
-
-In the next post, I will try to use Python to model MLE, and compare results with Linear Regression model in Scikit Learn. 
-
-[🔗The codes are in this Github Repo](https://github.com/ethHong/MLE_regression_world_happiness), utilizing [World Hapiness Report Data](https://worldhappiness.report/data/)
-
-This Article and Python practice is made after reviewing [Probability & Statistics for Machine Learning & Data Science](https://www.coursera.org/learn/machine-learning-probability-and-statistics) by DeepLearning.AI in Coursera. It would be great to look into this course if you have time. 
-
-The Python codes and contents of this post is written by the author - Sukhyun Hong after reviewing and understanding the course above. 
 
 #  Back to the basics - Maximum likelihood Estimation
 
