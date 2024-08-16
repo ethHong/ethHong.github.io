@@ -264,14 +264,8 @@ So, putting this into $P(Data | Model) * P(Model)$ Likelihood
 
 
 $$
-logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma) \\
--\frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
+logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma)-\frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
-
-$$
-
-$$
-
 
 
 in which $\lambda$  is a regularizing constant (Weight for regularizaing term.)
