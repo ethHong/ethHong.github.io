@@ -17,7 +17,7 @@ published: True
 
 In the next post, I will try to use Python to model MLE, and compare results with Linear Regression model in Scikit Learn. 
 
-[**🔗The codes are in this Github Repo](https://github.com/ethHong/MLE_regression_world_happiness),** utilizing [World Hapiness Report Data](https://worldhappiness.report/data/)
+🔗The codes are in this [Github Repo](https://github.com/ethHong/MLE_regression_world_happiness), utilizing [World Hapiness Report Data](https://worldhappiness.report/data/)
 
 This Article and Python practice is made after reviewing [Probability & Statistics for Machine Learning & Data Science](https://www.coursera.org/learn/machine-learning-probability-and-statistics) by DeepLearning.AI in Coursera. It would be great to look into this course if you have time. 
 
