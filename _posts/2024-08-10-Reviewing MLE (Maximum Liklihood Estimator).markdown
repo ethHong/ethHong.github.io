@@ -277,7 +277,6 @@ $$
 $$
 
 
-
 in which $\lambda$  is a regularizing constant (Weight for regularizaing term.)
 
 ## So, this MLE with Bayesian approach lead to Least Square Error + Regularization.
