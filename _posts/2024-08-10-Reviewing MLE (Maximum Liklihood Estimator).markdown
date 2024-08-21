@@ -84,57 +84,40 @@ $$
 
 
 Given data sample $X$, likihood of the samples coming from distribution $N(\mu, \sigma^2)$ could be formulated as **multiplication of probability of getting $x_i$ from the distribution**, which is:
-
-
 $$
 \begin{aligned}
 L(\mu, \sigma ; x) = \prod\limits_{i=1}^n f_{X_i}(x_i) = \prod\limits_{i=1}^n \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{(x_i-\mu)}{\sigma})^2}
 \end{aligned}
 $$
-
-
 (Using PDF of normal distribution, standardizing into Gaussian Normal.)
 
 This could be written as:
-
-
 $$
 \begin{aligned}
 = \frac{1}{\sigma^n(\sqrt{2\pi})^n}e^{-\frac{1}{2}(\frac{\sum_{i=1}^n(x_i-\mu)^2}{\sigma^2})}
 \end{aligned}
 $$
-
-
 Here, if we find $\mu$ and $\sigma$ that maximized this $L(\mu, \sigma ; x)$
 
 To get derivative easility, we can take log-likelihood:
-
-
 $$
-\begin{aligned}
 log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)-\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2}) \\
-= -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
-\end{aligned}
 $$
 
-
-
-
+$$
+= -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
+$$
 
 We can compute derivative in terms of $\mu$ and $sigma$, like this:
 
 <img width="757" alt="image" src="https://github.com/user-attachments/assets/85da5343-eb03-4b81-b78f-38bf913e8e0e">
 
 In conclusion, $\mu$ that makes
-
-
 $$
 \begin{aligned}
 \frac{1}{\sigma^2}(\sum_{i=1}^nx_i - n\mu)  = 0
 \end{aligned}
 $$
-
-
 is 
 $$
 \frac{\sum_{i=1}^nx_i}{n} = \bar{x}
