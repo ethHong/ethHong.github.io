@@ -44,9 +44,13 @@ In the second part, I would like to go through Linear Model with MLE, and go thr
 Motivation of MLE is answer to **'Which model / distribution / or parameters have the most likely produced the observed data?'** Assume we have some sample data. In most of the cases, what we want to do is identifying the patterns of some behaviour, or group from which the sample are derived in order to predict future behavior. 
 
 This process is basically, maximizing
+
+
 $$
 P(Data|Parameter)
 $$
+
+
 Which is, data comming from specific model, or parameter (e.g : Mean and Variance of normal distritbution, Parameters of linear model...).
 
 ## Gaussian example
@@ -72,26 +76,49 @@ Here, we may notice that we need to assume ***1) Random variables are independen
 Let's generalize this Gaussian MLE example. 
 
 We have n samples from Gaussian distribution, which follows unknown parameters (mean, variance) $\mu, \sigma^2$.
+
+
 $$
 X = (X_1, X_2, ...X_n)
 $$
+
+
 Given data sample $X$, likihood of the samples coming from distribution $N(\mu, \sigma^2)$ could be formulated as **multiplication of probability of getting $x_i$ from the distribution**, which is:
+
+
 $$
+\begin{aligned}
 L(\mu, \sigma ; x) = \prod\limits_{i=1}^n f_{X_i}(x_i) = \prod\limits_{i=1}^n \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{(x_i-\mu)}{\sigma})^2}
+\end{aligned}
 $$
+
+
 (Using PDF of normal distribution, standardizing into Gaussian Normal.)
 
 This could be written as:
+
+
 $$
+\begin{aligned}
 = \frac{1}{\sigma^n(\sqrt{2\pi})^n}e^{-\frac{1}{2}(\frac{\sum_{i=1}^n(x_i-\mu)^2}{\sigma^2})}
+\end{aligned}
 $$
+
+
 Here, if we find $\mu$ and $\sigma$ that maximized this $L(\mu, \sigma ; x)$
 
 To get derivative easility, we can take log-likelihood:
+
+
 $$
+\begin{aligned}
 log(L(\mu, \sigma ; x)) = -log(\sigma^n(\sqrt{2\pi})^n)-\frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2}) \\
 = -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum\\_{i=1}^n(x\\_i-\mu)^2}{\sigma^2})
+\end{aligned}
 $$
+
+
+
 
 
 We can compute derivative in terms of $\mu$ and $sigma$, like this:
@@ -99,9 +126,15 @@ We can compute derivative in terms of $\mu$ and $sigma$, like this:
 <img width="757" alt="image" src="https://github.com/user-attachments/assets/85da5343-eb03-4b81-b78f-38bf913e8e0e">
 
 In conclusion, $\mu$ that makes
+
+
 $$
+\begin{aligned}
 \frac{1}{\sigma^2}(\sum_{i=1}^nx_i - n\mu)  = 0
+\end{aligned}
 $$
+
+
 is 
 $$
 \frac{\sum_{i=1}^nx_i}{n} = \bar{x}
