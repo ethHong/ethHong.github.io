@@ -282,13 +282,11 @@ $$
 \prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\theta_i^2}
 $$
 which is multiplication of probability of $\theta_i$s. So, taking logarithm on $P(Data | Model) * P(Model)$ could be written as:
-
-
 $$
+\begin{aligned}
 log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\theta_i^2}) + log(\prod\limits_i \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}d_i^2})\\
+\end{aligned}
 $$
-
-
 and maximizing this is same as minimizing 
 $$
 \sum d_i^2 + \sum \theta_i^2
@@ -300,16 +298,12 @@ $$
 d_i = y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij}
 $$
 So, putting this into $P(Data | Model) * P(Model)$ Likelihood, we get:
-
-
 $$
 \begin{aligned}
 \log L(\theta, \sigma^2) &= -\frac{n}{2} \log(2\pi) - n \log(\sigma) \\
 &\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 - \frac{\lambda}{2} \sum \theta_i^2
 \end{aligned}
 $$
-
-
 in which $\lambda$  is a regularizing constant (Weight for regularizaing term.)
 
 ## So, this MLE with Bayesian approach lead to Least Square Error + Regularization.
@@ -319,16 +313,12 @@ $$
 log(L(\mu, \sigma ; x)) = -\frac{n}{2}log(2\pi)-nlog(\sigma) - \frac{1}{2}(\frac{\sum_{i=1}^n(x_i-\mu)^2}{\sigma^2})
 $$
 And the one from Linear Regression example, we had
-
-
 $$
 \begin{aligned}
 \log L(\theta, \sigma^2) &= -\frac{n}{2} \log(2\pi) - n \log(\sigma) \\
 &\quad - \frac{1}{2\sigma^2} \left( \sum_{i=1}^n y_i - \theta_0 - \sum_{j=1}^k \theta_j x_{ij} \right)^2 - \frac{\lambda}{2} \sum \theta_i^2
 \end{aligned}
 $$
-
-
 Except for having regularization term, we can see they are basically the same. Except for constant terms (in terms of variable $\mu, \sigma, and \theta$) we can see minimizing these formulation is it's basically minimizing 'Errors' between esmimated value, and the actual data. 
 $$
 \sum_{i=1}^n(x_i-\mu)^2 \text{ for Gaussian,}
