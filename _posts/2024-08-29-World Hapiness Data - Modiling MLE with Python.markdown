@@ -25,7 +25,7 @@ From the last post, I answered to the following questions:
 2. How could MLE be related to Bayesian approach?
 3. How is MLE related to Linear regression?
 
-And I figured out that when we tried to maximize likelihood of the **seen data coming from certain model** ($P(Data|Model)$) and likelihood of the model itself ($P(Model)$), we finally get linear regression with regularization term - which 
+And I figured out that when we tried to maximize likelihood of the **seen data coming from certain model** $P(Data|Model)$ and likelihood of the model itself $P(Model)$, we finally get linear regression with regularization term - which:
 
 1. Find estimator (model parameters) with least square error, while
 2. Preventing overfitting (not resulting in too unlikely model, which only fits for too specific cases!)
@@ -86,7 +86,7 @@ These data seems to be demographical data, and some quantified information relat
 1. For outliers, for each of features we are removing rows which are deviating Q1~Q3 iqr.
 2. After that, we are inspecting correlations between each variables
 
-~~~Python
+~~~python
 # Define functions to easily remove outliers.
 def iqr_threashold(df, colname): 
     q1 = df[colname].quantile(0.25)
@@ -118,6 +118,8 @@ for i in outlier_columns:
 
 df = temp
 ~~~
+
+
 
 ### Look into correlation between features
 
