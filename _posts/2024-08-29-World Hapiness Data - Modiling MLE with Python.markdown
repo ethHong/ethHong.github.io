@@ -25,7 +25,9 @@ From the last post, I answered to the following questions:
 2. How could MLE be related to Bayesian approach?
 3. How is MLE related to Linear regression?
 
-And I figured out that when we tried to maximize likelihood of the **seen data coming from certain model** $P(Data|Model)$ and likelihood of the model itself $P(Model)$, we finally get linear regression with regularization term - which **Find estimator (model parameters) with least square error,** while **Preventing overfitting (not resulting in too unlikely model, which only fits for too specific cases!)**
+---
+
+I figured out that when we tried to maximize likelihood of the **seen data coming from certain model** P(Data|Model) and likelihood of the model itself P(Model), we finally get linear regression with regularization term - which **Find estimator (model parameters) with least square error,** while **Preventing overfitting (not resulting in too unlikely model, which only fits for too specific cases!)**
 
 <img width="734" alt="image" src="https://github.com/user-attachments/assets/51f86905-d4a5-4451-abc7-5bc3becbb080">
 
@@ -179,6 +181,8 @@ $$
 logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma) 
 - \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
 $$
+
+
 Code:
 
 ~~~Python
