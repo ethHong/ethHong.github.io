@@ -177,13 +177,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 ~~~
 
 We will define 'regularized_log_likelihood' function which formulates log likelihood of parameter $\theta$, given the dataset. (Past post on MLE:  [Link](https://ethhong.github.io/statistics/datascience/2024/08/10/Reviewing-MLE-(Maximum-Liklihood-Estimator).html))
-$$
-logL(\theta, \sigma^2) = -\frac{n}{2}log(2\pi)-nlog(\sigma) 
-- \frac{1}{2\sigma^2}(\sum_{i=1}^n y_i - \theta_0 - \sum\limits_{j=1}^k \theta_jx_{ij})^2 -\frac{\lambda}{2}(\sum \theta_i^2)
-$$
-
-
-Code:
 
 ~~~Python
 from scipy.optimize import minimize
