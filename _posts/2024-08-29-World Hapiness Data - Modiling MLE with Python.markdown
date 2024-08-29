@@ -27,7 +27,11 @@ From the last post, I answered to the following questions:
 
 ---
 
-I figured out that when we tried to maximize likelihood of the **seen data coming from certain model** P(Data|Model) and likelihood of the model itself P(Model), we finally get linear regression with regularization term - which **Find estimator (model parameters) with least square error,** while **Preventing overfitting (not resulting in too unlikely model, which only fits for too specific cases!)**
+I figured out that when we tried to maximize likelihood of the seen data coming from certain model, and likelihood of the model itself, 
+$$
+P(Data | Model) * P(Model)
+$$
+we finally get linear regression with regularization term - which Find estimator (model parameters) with least square error, while Preventing overfitting (not resulting in too unlikely model, which only fits for too specific cases!)
 
 <img width="734" alt="image" src="https://github.com/user-attachments/assets/51f86905-d4a5-4451-abc7-5bc3becbb080">
 
@@ -178,7 +182,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 We will define 'regularized_log_likelihood' function which formulates log likelihood of parameter $\theta$, given the dataset. (Past post on MLE:  [Link](https://ethhong.github.io/statistics/datascience/2024/08/10/Reviewing-MLE-(Maximum-Liklihood-Estimator).html))
 
-~~~Python
+~~~python
 from scipy.optimize import minimize
 
 def regularized_log_likelihood(params, X, y, lambda_reg):
