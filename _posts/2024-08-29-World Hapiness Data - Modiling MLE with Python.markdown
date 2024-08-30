@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "World Hapiness Data - Modiling MLE with Python"
+title:  "World Hapiness Data - Modeling MLE with Python"
 tags:
   - Blog
   - MathJax
