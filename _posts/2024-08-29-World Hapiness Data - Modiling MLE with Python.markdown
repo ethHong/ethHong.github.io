@@ -187,8 +187,9 @@ from scipy.optimize import minimize
 
 def regularized_log_likelihood(params, X, y, lambda_reg):
     theta = params[:-1]
-    #sigma2 = params[-1]
-    sigma2=1
+    sigma2 = params[-1]
+    if sigma2 <= 0:
+    	return np.inf
     
     #Prediction
     y_pred = np.dot(X, theta)
@@ -204,11 +205,13 @@ def regularized_log_likelihood(params, X, y, lambda_reg):
     return -(log_likelohood - reg_term)
 ~~~
 
-## Why did I set $\sigma^2$  = 1?
+## [UPDATED] About $\sigma$ as a parameter
 
-At the vert first time, I made a mistake to including $\sigma$ as a parameter to optimize. However, this made the performance of prediction pretty bad, making coefficient value VERY large. I tried to figure out why this happened, and reached conclusion that: **for MLE (and linear regression case) we should better assume the data follows Gaussian Normal.** 
-
-So, instead of the line sigma2 = params[-1], I just put sigma2=1. And, I will use standardized data for estimation.
+At the vert first, I found the MLE estimation is not quite working well, so tried to fixing $\sigma = 1$, making assumption that the distribution of resiaul is Gaussian Normal (Which actually, does not make sense). It seemed like working well in the scatter plot, but after studying a little deeper, I found that it is never a correct way. $\sigma$ should not be a constant, but also should be a parameter to optimize!!
+$$
+\hat{\sigma_\epsilon}^2 = s^2 = \frac{1}{N-2}\sum_{i=1}^{N}e_i^2 = \frac{SSE}{N-2}
+$$
+As the formulation above shows, $\sigma$ is the estimator of residuals between the true regression line and the population data. Since we don't have information about this $\hat{\sigma_{\epsilon}}^2$ we are using the sample error's standard deviation (regression standard error) as an estimator. Optimized $s^2$ will tell you about 'how is the variance of your regression, and the actual data distribution?' - in other words, how 'accurate' your data is. I will try to post about the estimation and regression in the future, to talk about $\sigma$ in detail.
 
 ~~~python
 from sklearn.preprocessing import StandardScaler
@@ -240,7 +243,7 @@ Now, we have result! We got estimated parameters!
 >>> Estimated coefficients: [63.10162948  5.07081177  0.54476513  0.34363902  0.25787583 -0.07674608
  -0.07708015  0.8429842 ]
  
->>> Estimated variance (sigma^2): 1.0
+>>> Estimated variance (sigma^2): 11.277493411971397
 ~~~
 
 Let's evaluate the results with test data. 
@@ -257,8 +260,14 @@ print ("Test set RMSE: ",rmse_test)
 ~~~
 
 ~~~
->>> Test set RMSE:  3.511063781577253
+>>> Test set RMSE:  3.510943998386364
 ~~~
+
+### Some interpretation
+
+Here, we have estimated $\sigma^2$ (11.277493411971397) and RMSE (3.510943998386364). RMSE represents how much is the average error, from your prediction and the actual data. It could be meaningful because it tells you how is the 'average' error, but it does not give you the 'confidence' about your model itself. If RMSE is 3.5, is it high or low? Can you ensure that your next prediction for certain X value would be around the line, with similar error?
+
+$\sigma^2$ is what actually tells you about this. $\sigma^2$ implies that, 95% of the data points will be in the range of your prediction $\pm  2* \sigma$. Therefore, lower $\sigma^2$ means your prediction could be more accurate.
 
 ## Scatter plot!
 
