@@ -331,8 +331,4 @@ I believe if we added and tuned regularization in Linear Regression model, the r
 
 # Conclusion
 
-With formula, we figured out that MLE is same as Linear Regression with L2 regularization. And this time we also investigated it through a real-world data. While working on this, I had one more lesson from the experience that **assuming $\sigma = 1$ worked much better for real-world data.** 
-
-However, there still exists some questions to me - Why? Our real world data is not perfectly 'normal'. Therefore I just intuitively thought, there could be more precise, and better distribution that could explain our real-world data. Therefore, rather than just assuming gaussian normal, and standardizing dataset, I thought 'estimating the optimal $\sigma$ value' would give a better performance. I guess this is closely related to simplicity of the model, and Central Limit Theorem - so in case of real world data with huge sample size, Normal Distribution approximates the data quite well. 
-
-**I am planning to do some more experiments and futrher inspection related to this topic some times later!**
+With formula, we figured out that MLE is same as Linear Regression with L2 regularization. And this time we also investigated it through a real-world data. 
