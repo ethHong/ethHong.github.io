@@ -15,7 +15,7 @@ published: true
 
 > Questions: Lots of studies on LLMs have figured out their capability of 'reasoning'. Could we use this capability in educational context? - like, evaluate mathematical solutions. 
 
-This is a wrapup of a **casual research** which tries to **propose a metric, which can evaluate mathematical solutions based on 'understanding', not correct answers.** Even though the research ended up with solid official publication, since it had some meaningful lessons learned, I appreciate [prof. Lee](https://uic.yonsei.ac.kr/main/academic.asp?mid=m03_01_01&act=view&uid=929&keyword=) of Yonsei University who provided guidance and instruction in this project. 
+This is a wrapup of an **academic research** which tries to **propose a metric, which can evaluate mathematical solutions based on 'understanding', not correct answers.** The research had been submitted as academic research paper, but not finally published. However, since it had some meaningful lessons learned, I appreciate [prof. Lee](https://uic.yonsei.ac.kr/main/academic.asp?mid=m03_01_01&act=view&uid=929&keyword=) of Yonsei University who provided guidance and instruction in this project, and sharing insights through this post.
 
 * 🔗[Github Repo]( https://github.com/ethHong/MSU-Mathematical-Solution-Understanding-of-LLM-Evaluation)
 
