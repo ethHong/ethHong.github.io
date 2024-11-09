@@ -54,7 +54,7 @@ Based on what we learned in statistics classes, assuming that weight is normally
 
 Here, $\mu$ is the population mean (i.e., the actual average weight of elephants as determined by some real-world pattern that we cannot observe directly), while $\bar{Y}$ is an estimator for what we’re interested in.
 
-So, what we have done here is to **estimate the statistic of a real-world pattern using a limited sample dataset.** This is what we do for every "estimation" or modeling exercise. But we still have one question—"Can we just accept this estimator? How precise is it?"
+So, what we have done here is to **estimate the statistic of a real-world pattern using a limited sample dataset.** This is what we do for every "estimation" or modeling exercise. But we still have one question— ***Can we just accept this estimator? How precise is it?***
 
 ## Evaluating estimation.
 
