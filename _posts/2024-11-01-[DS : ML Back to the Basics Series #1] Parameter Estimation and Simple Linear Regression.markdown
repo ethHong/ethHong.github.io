@@ -58,7 +58,15 @@ So, what we have done here is **estimate the statistic of a real-world pattern u
 
 ## Evaluating estimation.
 
-What should we examine to assess the precision of an estimation? Let’s think of it this way: look at the two cases below. Both cases have the same mean; however, the data in the second case is much more spread out, meaning it has a higher variance from the mean. <img width="585" alt="Screenshot 2024-11-07 at 2 43 31 PM" src="https://github.com/user-attachments/assets/be4dc335-990a-4d56-b239-89c898b4081d">
+What should we examine to assess the precision of an estimation? Let’s think of it this way: look at the two cases below. Both cases have the same mean; however, the data in the second case is much more spread out, meaning it has a higher variance from the mean. 
+
+---
+
+
+
+<img width="585" alt="Screenshot 2024-11-07 at 2 43 31 PM" src="https://github.com/user-attachments/assets/be4dc335-990a-4d56-b239-89c898b4081d">
+
+---
 
 This implies that if the standard deviation is high, data points are more likely to be far from our estimated mean. (In a standard normal distribution, approximately 95% of data falls within 2 * std of the mean.) ***Therefore, if the standard deviation of our estimator is low, we can say our prediction is more efficient in terms of predicting unseen future data!***
 
@@ -66,9 +74,12 @@ This implies that if the standard deviation is high, data points are more likely
 
 Let’s go back to statistics class. Now it’s time for the **Central Limit Theorem** to do its job. Assuming $Y$ is normally distributed, the Central Limit Theorem states that
 
+
 $$
 \bar{Y} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
 $$
+
+
 
 if the sample size $n$ is large enough. Here, we see that the variance (or standard deviation) of our mean estimator is ***1) determined by the population variance, and 2) divided by sample size.*** What are the implications of this?
 
@@ -172,10 +183,10 @@ Now we have a better understanding of the true implications of "estimation" and 
 
 <img src="https://github.com/user-attachments/assets/c899c861-268b-4794-b601-3e92dc18f36c" width="400" height="400" />
 
-### 
-
 Now we have a better understanding of the true implications of "estimation" and "standard error." **But I hear someone saying...**
 $$
 \hat{y} = f(x) = E[X] = \frac{1}{n}\sum_{i=1}^nx_i
 $$
+
+
 It could also be considered a type of model. **BUT, I totally get what you mean.** In the next post, I will use the example of **Linear Regression** to explore how Standard Error works in evaluating regression models and how we can properly utilize regression models for better prediction. (Remember, models are not magic boxes!)
