@@ -150,7 +150,7 @@ In a normal distribution, 95% of data is located within $\text{mean} \pm 2\sigma
 
 Interestingly, the middle-aged group has a much larger variance than the total population. **This suggests that we selected an inappropriate segment for mean prediction.** This makes sense, as the 30–59 age range is quite broad for generalizing income patterns. To exaggerate, both myself two years from now and Jeff Bezos would fall into this group! We may reduce the variance further by splitting this group more narrowly or by removing outliers when conducting estimation.
 
-## There's still one more problem - $\Sigma$ is unkonw.
+## There's still one more problem - $\sigma$ is unkonw.
 
 I believe many readers have heard of "Standard Error." Now it’s time to introduce what it is and why it’s important. We just discussed why the "Standard Deviation" of the value we’re trying to estimate (in our example, $\bar{Y}$, which is the average weight of elephants in the world) is relevant. According to the Central Limit Theorem, we know how to determine this value: $\bar{Y} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$. However, the population variance, $\sigma$, is an unknown value. Therefore, **we use the sample standard deviation as an estimator for the population standard deviation.**
 $$
