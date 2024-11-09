@@ -159,7 +159,7 @@ We may reduce the variance further by splitting this group more narrowly or by r
 
 I believe many readers have heard of "Standard Error." Now it’s time to introduce what it is and why it’s important. We just discussed why the "Standard Deviation" of the value we’re trying to estimate (in our example, $\bar{Y}$, which is the average weight of elephants in the world) is relevant. According to the Central Limit Theorem, we know how to determine this value: $\bar{Y} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$. However, the population variance, $\sigma$, is an unknown value. Therefore, **we use the sample standard deviation as an estimator for the population standard deviation.**
 $$
-\sigma_{\bar{Y}} = \frac{\sigma}{\sqrt{n}} \sim s_{\bar{Y}}= \frac{s_{Y}}{\sqrt{n}}
+\sigma_{\bar{Y}} = \frac{\sigma}{\sqrt{n}} \approx s_{\bar{Y}}= \frac{s_{Y}}{\sqrt{n}}
 $$
 Therefore, **"Standard Error"** is an estimator of the "Standard Deviation of the value we are trying to estimate."
 
