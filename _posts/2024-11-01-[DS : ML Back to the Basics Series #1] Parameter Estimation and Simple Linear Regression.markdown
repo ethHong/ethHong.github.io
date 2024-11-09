@@ -76,8 +76,9 @@ Let’s go back to statistics class. Now it’s time for the **Central Limit The
 
 if the sample size $n$ is large enough. Here, we see that the variance (or standard deviation) of our mean estimator is ***1) determined by the population variance, and 2) divided by sample size.*** What are the implications of this?
 
-1. With a larger sample size, our estimator (sample mean) will be closer to the population mean, resulting in more precise estimation.
-2. However, if the population standard deviation itself is large—meaning if $\sigma$ is large—there will be limitations to the precision of mean estimation. 
+1. With a larger sample size, our estimator (sample mean) will approximate to the population mean.
+2. Standard deviation will also diminish, resulting in more precise estimation.
+3. However, if the population standard deviation itself is large—meaning if $\sigma$ is large—there will be limitations to the precision of mean estimation. 
 
 These implications are more apparent if we consider it this way: as our sample size approaches the population size, we are effectively sampling the entire population. Therefore, as the sample size increases, the sample mean approaches the population mean. **This is why we need large amounts of "BIG" data.**
 
