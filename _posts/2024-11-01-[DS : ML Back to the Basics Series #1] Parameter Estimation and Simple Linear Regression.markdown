@@ -166,6 +166,30 @@ Remember:
 
 Also, since \( n \) in the denominator of the standard error formula is square-rooted, as \( n \) increases, the impact of reducing standard error gradually diminishes.
 
+### Gradually diminishing effect of increasing N
+
+Let's try to plot this using entire Wage dataset. The following code plots how the variance of Wage changes, as the sample size increases:
+
+```R
+sample_sizes <- seq(10, 2910, by = 100)
+
+variance_computation <- function(s_size) {
+  temp_data <- Wage[sample(nrow(Wage), s_size), ]
+  var(temp_data$wage)
+}
+
+variances <- sapply(sample_sizes, variance_computation)
+
+plot(sample_sizes, variances, main = 'Variance of Wage as sample size N increases', col = "blue", xlab = 'Sample size')
+lines(sample_sizes, variances, col = "red", lwd = 2)
+```
+
+![image](https://github.com/user-attachments/assets/b12ebebf-1bc9-4ef2-bc1d-b790a219fdfe)
+
+We can see that initially, the variance decreases quite dramatically as we increase the sample size. However, after reaching a sample size of 500, the improvement slows down and becomes negligible. This pattern resembles:
+
+![image](https://github.com/user-attachments/assets/4a9a42d5-ecf8-4f3e-a96b-727a7627fcf6)
+
 ---
 
 ## Coming up next: let's look into 'Simple Linear Regression' model
