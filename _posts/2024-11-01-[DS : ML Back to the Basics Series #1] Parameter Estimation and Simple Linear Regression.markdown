@@ -149,7 +149,7 @@ We can see that the variance for the total population was 1811—a relatively la
 
 In a normal distribution, 95% of data is located within $\text{mean} \pm 2\sigma$ (the confidence interval). Therefore, if we use the mean as the estimator, the 95% confidence interval in the first case is about 85, while in the second case, it’s much narrower—around 58.
 
-Interestingly, the middle-aged group has a much larger variance than the total population. **This suggests that we selected an inappropriate segment for mean prediction.** This makes sense, as the 30–59 age range is quite broad for generalizing income patterns. To exaggerate, both myself two years from now and Jeff Bezos would fall into this group! We may reduce the variance further by splitting this group more narrowly or by removing outliers when conducting estimation.
+Interestingly, the middle-aged group has a much larger variance than the total population. **This suggests that we selected an inappropriate segment for mean prediction.** This makes sense, as the 30–59 age range is quite broad for generalizing income patterns. ***To exaggerate, both myself two years from now and Jeff Bezos would fall into this group!*** We may reduce the variance further by splitting this group more narrowly or by removing outliers when conducting estimation.
 
 ## There's still one more problem - $\sigma$ is unkonw.
 
