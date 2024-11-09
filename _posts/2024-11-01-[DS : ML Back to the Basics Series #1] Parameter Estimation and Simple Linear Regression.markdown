@@ -72,14 +72,7 @@ This implies that if the standard deviation is high, data points are more likely
 
 ### The, how is standard deviation of mean estimator like? - True implication of CLT
 
-Let’s go back to statistics class. Now it’s time for the **Central Limit Theorem** to do its job. Assuming $Y$ is normally distributed, the Central Limit Theorem states that
-
-
-$$
-\bar{Y} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
-$$
-
-
+Let’s go back to statistics class. Now it’s time for the **Central Limit Theorem** to do its job. Assuming $Y$ is normally distributed, the Central Limit Theorem states that $\bar{Y} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$
 
 if the sample size $n$ is large enough. Here, we see that the variance (or standard deviation) of our mean estimator is ***1) determined by the population variance, and 2) divided by sample size.*** What are the implications of this?
 
