@@ -200,7 +200,7 @@ Now we have a better understanding of the true implications of "estimation" and 
 
 <img src="https://github.com/user-attachments/assets/c899c861-268b-4794-b601-3e92dc18f36c" width="400" height="400" />
 
-Now we have a better understanding of the true implications of "estimation" and "standard error." **But I hear someone saying...**
+However, the definition of 'modeling' is making a function, that takes input data, and output some estimation of target variable. So, mean estimator could be defined as:
 $$
 \hat{y} = f(x) = E[X] = \frac{1}{n}\sum_{i=1}^nx_i
 $$
