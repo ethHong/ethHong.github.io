@@ -68,7 +68,7 @@ What should we examine to assess the precision of an estimation? Let’s think o
 
 ---
 
-This implies that if the standard deviation is high, data points are more likely to be far from our estimated mean. (In a standard normal distribution, approximately 95% of data falls within 2 * std of the mean.) ***Therefore, if the standard deviation of our estimator is low, we can say our prediction is more efficient in terms of predicting unseen future data!***
+This implies that if the standard deviation is high, data points are more likely to be far from our estimated mean. (In a standard normal distribution, approximately 95% of data falls within 2 * std of the mean.) ***Therefore, if the standard deviation of our estimating value is low, we can say our prediction is more efficient in terms of predicting unseen future data!***
 
 ### The, how is standard deviation of mean estimator like? - True implication of CLT
 
