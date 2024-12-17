@@ -274,7 +274,7 @@ which is error between 'estimated model and true line' parameters. Let's leave c
 $$
 S_{pred} = s(1+ \frac{1}{N} + \frac{(X_f - \bar{X})^2}{(N-1)s_X^2})^{(1/2)}
 $$
-Here, $s$ is standard error of regression, which is $\hat{\sigma_\epsilon}^2 = s^2 = \frac{1}{N-2}\sum_{i=1}^{N}e_i^2 = \frac{SSE}{N-2}$
+Here, $s$ is standard error of regression, which is $\hat{\sigma_{\epsilon}}^2 = s^2 = \frac{1}{N-2} \sum_{i=1}^N e_i^2 = \frac{\text{SSE}}{N-2}$
 
 So, how is the standard error decomposed?
 
