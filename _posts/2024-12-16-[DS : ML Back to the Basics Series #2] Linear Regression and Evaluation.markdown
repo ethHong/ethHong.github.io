@@ -130,12 +130,7 @@ $$
 b_1 = \frac{\sum_i^{N}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum_i^{N}(X_i-\bar{X})^2} = \frac{s_{XY}}{s_X^2}
 $$
 
----
-
-
-$$
-b_0 = \bar{Y} - b_1\bar{X}
-$$
+And, $b_0 = \bar{Y} - b_1\bar{X}$
 
 There are some more implication behind this. If we look at $b_0$ formula, and plug it into $Y  = b_0 + b_1X$, we can find out that this Least Square Solution must pass $(\bar{X}, \bar{Y})$.
 
@@ -220,7 +215,7 @@ I won't go deep into the calculation details, but each of the standard errors co
   \hat{\sigma_\epsilon}^2 = s^2 = \frac{1}{N-2}\sum_{i=1}^{N}e_i^2 = \frac{SSE}{N-2}
   $$
 
-* **$sigma__{\beta_1}$** We use sample standard deviation here too: 
+* **$\sigma_{\beta_1}$** We use sample standard deviation here too: 
   $$
   \hat{\sigma_{\beta_1{}}} = \sqrt{\frac{\sigma_{\epsilon}^2}{(N-1)s_x^2}} \approx \sqrt{Var(b_1)} = s_{b_1} = \sqrt{\frac{s^2}{(N-1)s_x^2}}
   $$
@@ -272,7 +267,7 @@ $$
 $$
 which is error between 'estimated model and true line' parameters. Let's leave computation to the computer. The standard error of point estimation, $Var(\hat{Y})$ is computed as the following:
 $$
-S_{pred} = s(1+ \frac{1}{N} + \frac{(X_f - \bar{X})^2}{(N-1)s_X^2})^{(1/2)}
+S_{\text{pred}} = s \sqrt{1 + \frac{1}{N} + \frac{(X_f - \bar{X})^2}{(N-1)s_X^2}}
 $$
 Here, $s$ is standard error of regression, which is $\hat{\sigma_{\epsilon}}^2 = s^2 = \frac{1}{N-2} \sum_{i=1}^N e_i^2 = \frac{\text{SSE}}{N-2}$
 
