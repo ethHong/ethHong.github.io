@@ -92,9 +92,9 @@ Correlation is basically computed by dividing Covariance, with each random varia
 
 # Linear regression and correlation
 
-$$
-Y = b_0 + b_1X
-$$
+$Y = b_0 + b_1X$
+
+---
 
 Now, let's look at the linear regression model in detail. We are fitting a line on dataset by representing Y as linear function of X. $b_0$ and $b_1$ are two parameters that decides how to draw the line. Based on given data, what we are doing here is same as what we have done from the mean estimation: 
 
@@ -130,6 +130,9 @@ $$
 b_1 = \frac{\sum_i^{N}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum_i^{N}(X_i-\bar{X})^2} = \frac{s_{XY}}{s_X^2}
 $$
 
+---
+
+
 $$
 b_0 = \bar{Y} - b_1\bar{X}
 $$
@@ -152,7 +155,7 @@ $Y = \beta_0 + \beta_1X + \epsilon$, and our prediction as $\hat{Y} = \beta_0 + 
 
 1. **Mean of residual should be 0.** 
 2. **Correlation between $e$ and $X$ should be 0. ($Corr(e, X) = 0$)**
-3. **Correlation between $\hat{Y}$ and $e$ should be zero. (Since $\hat{Y} is dependent on X$, if 2 is true, this is also true. )**
+3. **Correlation between $\hat{Y}$ and $e$ should be zero. (Since $\hat{Y}$ is dependent on $X$, if 2 is true, this is also true. )**
 
 The first one seems to be more intuitive: If the regression model has 'least square error', sum of it's errors will be canceled out to be zero. How about the second one? **It implies 'Error should be consistent over entire range of X'.** 
 
@@ -187,6 +190,9 @@ $$
 TSS = SSR + SSE
 $$
 
+---
+
+
 $$
 R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}
 $$
@@ -214,7 +220,7 @@ I won't go deep into the calculation details, but each of the standard errors co
   \hat{\sigma_\epsilon}^2 = s^2 = \frac{1}{N-2}\sum_{i=1}^{N}e_i^2 = \frac{SSE}{N-2}
   $$
 
-* **$sigma_b_{1}$**: We use sample standard deviation here too: 
+* **$sigma__{\beta_1}$** We use sample standard deviation here too: 
   $$
   \hat{\sigma_{\beta_1{}}} = \sqrt{\frac{\sigma_{\epsilon}^2}{(N-1)s_x^2}} \approx \sqrt{Var(b_1)} = s_{b_1} = \sqrt{\frac{s^2}{(N-1)s_x^2}}
   $$
