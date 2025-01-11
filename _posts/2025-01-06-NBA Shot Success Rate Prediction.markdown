@@ -15,6 +15,8 @@ published: True
 
 # Summary 
 
+![image](https://github.com/user-attachments/assets/35d4d7bb-c9fd-48d5-8dcb-3bd80cf692c9)
+
 <img width="1335" alt="Screenshot 2025-01-06 at 10 29 36 PM" src="https://github.com/user-attachments/assets/7b5e242a-31cb-4fb8-b9d7-1aedfc2eedeb" />
 
 * This project aims to build a model that predict shooting success rate, given information about shooting attempts on NBA game. 
