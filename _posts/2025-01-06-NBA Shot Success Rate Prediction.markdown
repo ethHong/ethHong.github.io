@@ -183,7 +183,7 @@ Therefore, if 'predicted probability' of failed shots are clearly lower than pre
 
 With GridCV, we could proceed parameter optimization. 
 
-```python 
+```python
 from sklearn.metrics import log_loss
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.linear_model import LogisticRegression
