@@ -112,11 +112,11 @@ y = \beta_0 + \beta_1 \cdot \text{Treatment} + \beta_2 \cdot (x-c) + \beta_3 \cd
 $$
 Where $c$ is cutoff. From the example RDD plot below, we could measure the following with the coefficients from the regression above:
 
-|         | Measure           | Interpretation                                               |
-| ------- | ----------------- | ------------------------------------------------------------ |
-| \beta_R | \beta_2 + \beta_3 | Slope after treatment: sensitivity of views on rating after treatment. |
-| \beta_L | \beta_2           | Slope before treatment: sensitivity of views on rating before treatment. s |
-| \tau    | \beta_1           | Treatment effect on the cutoff                               |
+|           | Measure             | Interpretation                                               |
+| --------- | ------------------- | ------------------------------------------------------------ |
+| $\beta_R$ | $\beta_2 + \beta_3$ | Slope after treatment: sensitivity of views on rating after treatment. |
+| $\beta_L$ | $\beta_2$           | Slope before treatment: sensitivity of views on rating before treatment. s |
+| $\tau$    | $\beta_1$           | Treatment effect on the cutoff                               |
 
  <img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/example_RDD.png" alt="DAG" style="zoom:100%;" />
 
