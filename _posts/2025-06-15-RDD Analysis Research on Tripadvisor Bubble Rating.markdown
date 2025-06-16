@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""
+title:  "RDD Analysis Research on Tripadvisor Bubble Rating"
 tags:
   - Blog
   - MathJax
