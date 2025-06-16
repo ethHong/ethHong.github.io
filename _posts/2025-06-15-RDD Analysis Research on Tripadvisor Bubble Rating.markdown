@@ -37,7 +37,7 @@ Github repo: [🔗Link](https://github.com/ethHong/TripadvisorA_RDD_Analysis)
 
 ## Analytical Result Summary
 
-![Summary](/Users/HongSukhyun/Documents/ethHong.github.io/_posts/image/Summary.png)
+![Summary](https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/Summary.png)
 
 1. **People starts to perceive rating 'high' form 4.0.** In 3.5 or lower rating, people are **less likely to perceive hotel to be 'better' even though score increases.**
 2. **Between 4.0~4.5, hotel are less differentiated by the rating.** Customers might feel 4.0, or 4.2 as equally 'good' as 4.4, or 4.5.
@@ -54,7 +54,7 @@ Github repo: [🔗Link](https://github.com/ethHong/TripadvisorA_RDD_Analysis)
   * Through further analysis, we figured out the trop is due to externality, which is drop in number of reviews. 
   * This imply people are likley to doubt credibility of rating, if rating is very high while number of rating is very low. (e.g. 4.9 or 5.0 rating with only 10 reviews)
 
-<img src="image/DAG.png" alt="DAG" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/DAG.png" alt="DAG" style="zoom:50%;" />
 
 ---
 
@@ -96,11 +96,11 @@ Therefore, this project go through data processing to issue 2 major issues.
 1. **We will only look into cutoff above 3.5 ratings** - Since most of the listing & filtering logic prioritize rating, people are less likely to be ***exposed*** with low rating hotels - we observe majority of hotles under 3.5 rating have 0 or close to 0 views. 
 2. **Aggregate hotels by binning to the closest 0.05 rating** – To reduce noise and enhance visibility of the underlying patterns, we average hotels with very similar ratings (within 0.05). At first glance, this may appear to conflict with the RDD assumption, which expects low variance in outcomes for units near the cutoff. However, in our context, we believe the high variability in the raw data is not due to inherent randomness, but rather due to **exposure inequality**—some hotels receive significantly fewer views due to how the platform surfaces listings. To address this, we carefully chose a **small bin size (0.05)** to smooth the data just enough without distorting potential discontinuities.
 
-<img src="image/data_plot.png" alt="DAG" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/data_plot.png" alt="DAG" style="zoom:50%;" />
 
 From the figure above, we could see that after binning the data noise has been reduced. 
 
-<img src="image/binned_output.png" alt="DAG" style="zoom:100%;" />
+<img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/binned_output.png" alt="DAG" style="zoom:100%;" />
 
 By cutting off range of the only from 3.5 to 4.0, we could more clearly see that patterns of discontinuity at bubble rating cutoffs (3.75, 4.25, 4.75). 
 
@@ -118,7 +118,7 @@ Where $c$ is cutoff. From the example RDD plot below, we could measure the follo
 | \beta_L | \beta_2           | Slope before treatment: sensitivity of views on rating before treatment. s |
 | \tau    | \beta_1           | Treatment effect on the cutoff                               |
 
- <img src="image/example_RDD.png" alt="DAG" style="zoom:100%;" />
+ <img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/example_RDD.png" alt="DAG" style="zoom:100%;" />
 
 In this project, we utilized **parametric RDD** which takes entire range of the data before and after the cutoff, to run regression. **Non-parametric RDD** is usually more recommended because of the following 2 advantages:
 
@@ -138,7 +138,7 @@ We could get following conclusion through running RDD analysis.
 | Treatment effect | High and Positive    | Not significant       | High and Positive             |
 | Slope change     | Positively Increased | No significant change | Turned negative from positive |
 
-![Summary](/Users/HongSukhyun/Documents/ethHong.github.io/_posts/image/Summary.png)
+![Summary](https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/Summary.png)
 
 From cutoff 3.75, through rounding up scores to 4.0 we could see significant jump on views. Also, we could observe before score 3.75 slope was flat, but it became highly positive after the cutoff. **This implies 4.0+ is the range of rating that people begins to perceive score to be high, and important.** At the same time, score between range of 3.5~3.75 is being rounded down to 3.5. Customers perceive score 3.5 or lower to be low, probably impy low quality. Therefore undre score 3.5, hotels are less likely to get more views even rating increases. 
 
@@ -150,7 +150,7 @@ After cutoff 4.75, we could see positive treatment effect, but interestingly slo
 
  Since the results on high rating range is counterintuitive, we made an hypothesis that this could be an omitted variable which effect on the views - rating count. When we usually see very high rating with little number of reviews, we tend to doubt the credibility of the rating. 
 
-<img src="image/DAG.png" alt="DAG" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/DAG.png" alt="DAG" style="zoom:50%;" />
 
 Therefore, we made an hypothesis that number of reviews are working as an proxy for 'credibility', and credibility effects on the views. Also, since we spotted negative relationship between rating and views only in higher rating range, ***we assumed impact of 'review count' on views increases as rating increase***. Therefore, we went throug regression by adding interaction term between rating and number of reviews:
 $$
@@ -160,7 +160,7 @@ Here, if we see positive coefficient ($\beta_3$), this means impact of review co
 
 As a result, we observed $\beta_3 = 0.0483$. This implies impact difference of review count when rating is 5, is  **66.7%** higher compared to when rating is 3. (When rating is 3, 1 additional review may increase 0.1314 views, while it will increase 0.219 views when rating is 5.)
 
-<img src="image/review_count.png" alt="DAG" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ethHong/ethHong.github.io/main/_posts/image/review_count.png" alt="DAG" style="zoom:50%;" />
 
 By observing data, we could observe number of ratings dropped significantly after rating 4.75. 
 
